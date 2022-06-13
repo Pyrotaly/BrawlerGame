@@ -13,11 +13,11 @@ public class PlayerCharacter0 : BaseCharacter
         UpLight = new UpLightAttackState(playerX, "UpAttack", LightAttackData);
 
         AirLight = new AirLightAttackState(playerX, "AirAttack", LightAttackData);
-        AirDownLight = new AirDownLightAttackState(playerX, "AirDownAttack", LightAttackData);
+        AirDownLight = new Char0AirDownLightAttackState(playerX, "AirDownAttack", LightAttackData);
 
-        LightCharged = new Char0HeavyAttackState(playerX, "AttackCharged", HeavyAttackData);
-        DownCharged = new Char0DownHeavyAttackState(playerX, "DownCharged", HeavyAttackData);  
+        LightCharged = new Char0LightChargedAttackState(playerX, "AttackCharged", HeavyAttackData);
+        DownCharged = new Char0DownChargedAttackState(playerX, "DownCharged", HeavyAttackData);  
 
-        DashLight = new DashLightAttackState(playerX, "DashAttack", LightAttackData);
+        DashAttack = new DashAttackState(playerX, "DashAttack", LightAttackData);
     }
 }

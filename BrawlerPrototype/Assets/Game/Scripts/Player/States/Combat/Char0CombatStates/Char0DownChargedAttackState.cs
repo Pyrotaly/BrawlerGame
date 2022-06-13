@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Char0LightAttackSpam : LightAttackSpam
+public class Char0DownChargedAttackState : DownHeavyAttackState
 {
-    public D_LightAttacks lightAttackData;
-    public Char0LightAttackSpam(Player player, string animBoolName, D_LightAttacks lightAttackData) : base(player, animBoolName)
+    public Char0DownChargedAttackState(Player player, string animBoolName, D_HeavyAttacks HeavyAttackData) : base(player, animBoolName, HeavyAttackData)
     {
-        this.lightAttackData = lightAttackData;
     }
 
     public override void AnimationFinishedTrigger()
@@ -18,6 +16,7 @@ public class Char0LightAttackSpam : LightAttackSpam
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
+        player.Core.Movement.SetVelocityX(10 * player.Input.direction);
     }
 
     public override void Enter()
@@ -33,19 +32,6 @@ public class Char0LightAttackSpam : LightAttackSpam
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
-        if (isAnimationFinished)
-        {
-            if (attacking)
-            {
-                Debug.Log("HAHA");
-                stateMachine.ChangeState(player.CharacterSelected.Light);
-            }
-            else
-            {
-                stateMachine.ChangeState(player.IdleState);
-            }
-        }
     }
 
     public override void PhysicsUpdate()

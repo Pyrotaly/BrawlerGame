@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Char0DownHeavyAttackState : DownHeavyAttackState
+public class Char0LightChargedAttackState : HeavyAttackState
 {
-    public Char0DownHeavyAttackState(Player player, string animBoolName, D_HeavyAttacks HeavyAttackData) : base(player, animBoolName, HeavyAttackData)
+    public Char0LightChargedAttackState(Player player, string animBoolName, D_HeavyAttacks HeavyAttackData) : base(player, animBoolName, HeavyAttackData)
     {
     }
 
@@ -16,17 +16,26 @@ public class Char0DownHeavyAttackState : DownHeavyAttackState
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
-        player.Core.Movement.SetVelocityX(10 * player.Input.direction);
+        player.Core.Movement.SetVelocityX(16 * player.Input.direction);
     }
 
     public override void Enter()
     {
         base.Enter();
+        if (player.AttackCounter >= 4 || player.AttackCounter < 3)
+        {
+            player.AttackCounter = 3;
+        }
+        else
+        {
+            player.AttackCounter++;
+        }
     }
 
     public override void Exit()
     {
         base.Exit();
+        attacking = true;
     }
 
     public override void LogicUpdate()
@@ -44,3 +53,4 @@ public class Char0DownHeavyAttackState : DownHeavyAttackState
         base.WeaponAnimationTrigger();
     }
 }
+

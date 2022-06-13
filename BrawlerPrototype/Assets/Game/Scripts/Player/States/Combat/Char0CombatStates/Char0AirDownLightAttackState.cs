@@ -2,34 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightAttackSpam : GroundStates
+public class Char0AirDownLightAttackState : AirDownLightAttackState
 {
-    public LightAttackSpam(Player player, string animBoolName) : base(player, animBoolName)
+    public Char0AirDownLightAttackState(Player player, string animBoolName, D_LightAttacks LightAttackData) : base(player, animBoolName, LightAttackData)
     {
     }
 
     public override void AnimationFinishedTrigger()
     {
         base.AnimationFinishedTrigger();
-        if (attacking)
-        {
-            Debug.Log("HAHA");
-            stateMachine.ChangeState(player.CharacterSelected.Light);
-        }
-        else
-        {
-            stateMachine.ChangeState(player.IdleState);
-        }
     }
 
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
-    }
-
-    public override void DoChecks()
-    {
-        base.DoChecks();
     }
 
     public override void Enter()
@@ -45,6 +31,7 @@ public class LightAttackSpam : GroundStates
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        player.Core.Movement.SetVelocityY(6);
     }
 
     public override void PhysicsUpdate()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class AirStates : PlayerState
 {
     protected bool attacking;
-    protected bool airDownAttacking;
+    protected bool downAttacking;
     protected bool upAttacking;
     public AirStates(Player player, string animBoolName) : base(player, animBoolName)
     {
@@ -74,49 +74,34 @@ public class AirStates : PlayerState
         if (player.Input.DownAttack == true)
         {
             startTimer = true;
-            airDownAttacking = true;
+            downAttacking = true;
 
+            //DownLightCharged
+            if (timer >= player.CharacterSelected.LightAttackData.LightAttackDetails[5].TimeTillCharged)
+            {
+                //stateMachine.ChangeState(player.CharacterSelected.DownHeavy);
+                player.Input.DownAttack = false;
+                startTimer = false;
+                downAttacking = false;
+            }
+        }
+
+        //AirDown
+        if (downAttacking && !player.Input.Attack)
+        {
             if (Time.time >= player.CharacterSelected.NextLightAttack[5])
             {
-                Debug.Log("dOWNlIGHT");
                 player.CharacterSelected.NextLightAttack[5] = Time.time + player.CharacterSelected.CharacterLightCooldowns[5];
                 startTimer = false;
-                airDownAttacking = false;
+                downAttacking = false;
                 Debug.Log(player.CharacterSelected.NextLightAttack[5]);
                 stateMachine.ChangeState(player.CharacterSelected.AirDownLight);
             }
             else
             {
-                airDownAttacking = false;
+                downAttacking = false;
             }
-
-            ////DownLightCharged
-            //if (timer >= player.CharacterSelected.LightAttackData.LightAttackDetails[5].TimeTillCharged)
-            //{
-            //    stateMachine.ChangeState(player.CharacterSelected.DownHeavy);
-            //    player.Input.DownAttack = false;
-            //    startTimer = false;
-            //    airDownAttacking = false;
-            //}
         }
-
-        //AirDownLight
-        //if (airDownAttacking && !player.Input.DownAttack)
-        //{
-        //    if (Time.time >= player.CharacterSelected.NextLightAttack[5])
-        //    {
-        //        Debug.Log("dOWNlIGHT");
-        //        player.CharacterSelected.NextLightAttack[5] = Time.time + player.CharacterSelected.CharacterLightCooldowns[5];
-        //        startTimer = false;
-        //        airDownAttacking = false;
-        //        Debug.Log(player.CharacterSelected.NextLightAttack[5]);
-        //        stateMachine.ChangeState(player.CharacterSelected.AirDownLight);
-        //    }
-        //    else
-        //    {
-        //        airDownAttacking = false;
-        //    }
-        //}
         #endregion
 
         #region UpAttacks
@@ -125,19 +110,7 @@ public class AirStates : PlayerState
             startTimer = true;
             upAttacking = true;
 
-            //UpLightCharged
-            if (timer >= player.CharacterSelected.LightAttackData.LightAttackDetails[6].TimeTillCharged)
-            {
-                stateMachine.ChangeState(player.CharacterSelected.UpCharged);
-                player.Input.UpAttack = false;
-                startTimer = false;
-                upAttacking = false;
-            }
-        }
-
-        //UpLight
-        if (upAttacking && !player.Input.UpAttack)
-        {
+            //UpLight
             if (Time.time >= player.CharacterSelected.NextLightAttack[6])
             {
                 player.CharacterSelected.NextLightAttack[6] = Time.time + player.CharacterSelected.CharacterLightCooldowns[6];

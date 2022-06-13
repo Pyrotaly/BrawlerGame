@@ -10,7 +10,7 @@ public class BaseCharacter : MonoBehaviour
 
     public DownLightAttackState DownLight;
     public UpLightAttackState UpLight;
-    public DashLightAttackState DashLight;
+    public DashAttackState DashAttack;
 
     public AirLightAttackState AirLight;
     public AirDownLightAttackState AirDownLight;
@@ -18,7 +18,6 @@ public class BaseCharacter : MonoBehaviour
     public HeavyAttackState LightCharged;
     public DownHeavyAttackState DownCharged;
     public UpHeavyAttackState UpCharged;
-    public DashHeavyAttackState DashHeavy;
 
     [Header("Data")]
     public D_LightAttacks LightAttackData;

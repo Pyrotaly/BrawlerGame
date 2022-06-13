@@ -2,49 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirDownLightAttackState : AirStates
+public class DashAttackState : AirStates
 {
-    private D_LightAttacks LightAttackData;
-    public AirDownLightAttackState(Player player, string animBoolName, D_LightAttacks LightAttackData) : base(player, animBoolName)
+    private D_LightAttacks lightAttackData;
+    public DashAttackState(Player player, string animBoolName, D_LightAttacks lightAttackData) : base(player, animBoolName)
     {
-        this.LightAttackData = LightAttackData;
+        this.lightAttackData = lightAttackData;
     }
 
     public override void Enter()
     {
         base.Enter();
         player.CanFlip = false;
-        player.AnimCombat.SetBool("Light", true);
+        //player.AnimCombat.SetBool("Light", true);      If implementing heavy attacks, will need this
     }
 
     public override void Exit()
     {
         base.Exit();
-        player.AnimCombat.SetBool("Light", false);
+        //player.AnimCombat.SetBool("Light", false);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        player.Core.Movement.SetVelocityY(6);
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
     }
-
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
     }
-
     public override void AnimationFinishedTrigger()
     {
         base.AnimationFinishedTrigger();
-        stateMachine.ChangeState(player.FallState);
+        stateMachine.ChangeState(player.IdleState);
     }
-
+  
     public override void WeaponAnimationTrigger()
     {
         base.WeaponAnimationTrigger();

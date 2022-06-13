@@ -37,7 +37,7 @@ public class PlayerDashState : AirStates
             if (Time.time >= player.CharacterSelected.NextLightAttack[3])
             {
                 player.CharacterSelected.NextLightAttack[3] = Time.time + player.CharacterSelected.CharacterLightCooldowns[3];
-                stateMachine.ChangeState(player.CharacterSelected.DashLight); 
+                stateMachine.ChangeState(player.CharacterSelected.DashAttack); 
                 startTimer = false;
                 dAttacking = false;
                 Debug.Log("DashAttack");

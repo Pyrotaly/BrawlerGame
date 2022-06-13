@@ -155,6 +155,8 @@ AnimationClip:
       value: {fileID: 21300000, guid: 527c2ecb1d8aab1439356da4d64ff948, type: 3}
     - time: 1.6153846
       value: {fileID: 21300000, guid: 26989d538b1648245998346b23ff26fd, type: 3}
+    - time: 1.7692307
+      value: {fileID: 21300000, guid: 26989d538b1648245998346b23ff26fd, type: 3}
     - time: 2.1538463
       value: {fileID: 21300000, guid: 26989d538b1648245998346b23ff26fd, type: 3}
     attribute: m_Sprite
@@ -226,6 +228,7 @@ AnimationClip:
     - {fileID: 21300000, guid: 985c8231419a5e0418a9c34a4b989a01, type: 3}
     - {fileID: 21300000, guid: 2e23807c9333ec74e9bebc6816712c1d, type: 3}
     - {fileID: 21300000, guid: 527c2ecb1d8aab1439356da4d64ff948, type: 3}
+    - {fileID: 21300000, guid: 26989d538b1648245998346b23ff26fd, type: 3}
     - {fileID: 21300000, guid: 26989d538b1648245998346b23ff26fd, type: 3}
     - {fileID: 21300000, guid: 26989d538b1648245998346b23ff26fd, type: 3}
   m_AnimationClipSettings:
@@ -357,7 +360,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.07692308
+  - time: 0.15384616
     functionName: WeaponAnimationTrigger
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -365,6 +368,69 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.30769232
+    functionName: AnimationTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.3846154
+    functionName: WeaponAnimationTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.61538464
+    functionName: AnimationTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.84615386
+    functionName: WeaponAnimationTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1
+    functionName: AnimationTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.0769231
+    functionName: WeaponAnimationTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.3076923
+    functionName: AnimationTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.5384616
+    functionName: WeaponAnimationTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.7692307
+    functionName: AnimationFinishTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.1538463
     functionName: AnimationFinishTrigger
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee843ab4a3d7da42b6e0455e26e1c6d, type: 3}
+  m_Name: Character1&&Enemy0Heavy
+  m_EditorClassIdentifier: 
+  HeavyAttackDetails:
+  - AttackName: Heavy
+    DamageAmount: 0
+    MovementSpeed: 0
+    ProjectileSpeed: 0
+    BasicCooldown: 15
+    BasicDamageType: 42
+    TimeTillCharged: 0
+    ChargedDamageAmount: 0
+    ChargedMovementSpeed: 0
+    ChargedProjectileSpeed: 0
+    ChargedCooldown: 0
+    ChargedDamageType: 0
+  - AttackName: DownHeavy/Teleport
+    DamageAmount: 0
+    MovementSpeed: 0
+    ProjectileSpeed: 0
+    BasicCooldown: 3.5
+    BasicDamageType: 0
+    TimeTillCharged: 0
+    ChargedDamageAmount: 0
+    ChargedMovementSpeed: 0
+    ChargedProjectileSpeed: 0
+    ChargedCooldown: 0
+    ChargedDamageType: 0
+  - AttackName: UpHeavy
+    DamageAmount: 0
+    MovementSpeed: 0
+    ProjectileSpeed: 0
+    BasicCooldown: 12
+    BasicDamageType: 0
+    TimeTillCharged: 0
+    ChargedDamageAmount: 0
+    ChargedMovementSpeed: 0
+    ChargedProjectileSpeed: 0
+    ChargedCooldown: 0
+    ChargedDamageType: 0
+  - AttackName: 
+    DamageAmount: 0
+    MovementSpeed: 0
+    ProjectileSpeed: 0
+    BasicCooldown: 12
+    BasicDamageType: 0
+    TimeTillCharged: 0
+    ChargedDamageAmount: 0
+    ChargedMovementSpeed: 0
+    ChargedProjectileSpeed: 0
+    ChargedCooldown: 0
+    ChargedDamageType: 0
+  - AttackName: 
+    DamageAmount: 0
+    MovementSpeed: 0
+    ProjectileSpeed: 0
+    BasicCooldown: 12
+    BasicDamageType: 0
+    TimeTillCharged: 0
+    ChargedDamageAmount: 0
+    ChargedMovementSpeed: 0
+    ChargedProjectileSpeed: 0
+    ChargedCooldown: 0
+    ChargedDamageType: 0

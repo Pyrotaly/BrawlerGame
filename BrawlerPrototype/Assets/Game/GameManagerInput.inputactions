@@ -1,0 +1,44 @@
+{
+    "name": "GameManagerInput",
+    "maps": [
+        {
+            "name": "UI",
+            "id": "430ecf4f-e21b-4b75-940d-dcbcaf226ca3",
+            "actions": [
+                {
+                    "name": "PauseMenu",
+                    "type": "Button",
+                    "id": "02546b3a-b1e0-4940-a747-3c8be2c15345",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "106f7d51-dc80-45ba-bd1c-10a46599d9fe",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "be2e36c6-ab50-4a6b-ac45-e03d09d20155",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -33,40 +33,17 @@ public class PlayerDashState : AirStates
         #region Attacks
         if (player.Input.Attack)  
         {
-            startTimer = true;
-            dAttacking = true;
-
-            //LightCharged
-            if (timer >= player.CharacterSelected.LightAttackData.LightAttackDetails[3].TimeTillCharged)
-            {
-                //stateMachine.ChangeState(player.CharacterSelected.Heavy); //Temporary
-                player.Input.Attack = false;
-                startTimer = false;
-                dAttacking = false;
-                Debug.Log("DashChargedAttack");
-            }
-        }
-
-        //Light
-        if (dAttacking && !player.Input.Attack)
-        {
+            //Light Dash Attack
             if (Time.time >= player.CharacterSelected.NextLightAttack[3])
             {
                 player.CharacterSelected.NextLightAttack[3] = Time.time + player.CharacterSelected.CharacterLightCooldowns[3];
-                stateMachine.ChangeState(player.CharacterSelected.DashLight); //Currently DashLight is only dash attack implemented
+                stateMachine.ChangeState(player.CharacterSelected.DashLight); 
                 startTimer = false;
                 dAttacking = false;
                 Debug.Log("DashAttack");
             }
         }
         #endregion
-        #region AirAttacks
-        if (player.Input.Attack == true && !isGrounded)
-        {
-            //player.StateMachine.ChangeState(player.Sword_DashAttack);
-        }
-        #endregion
-
 
         if (player.Input == isJumping)
         {

@@ -139,7 +139,7 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Damage/KnockBack
-    private List<IDamageable> detectedDamageable = new List<IDamageable>(); //should this be private or public
+    private List<IDamageable> detectedDamageable = new List<IDamageable>();
     private List<IKnockable> detectedKnockable = new List<IKnockable>();
 
     public void AddToDetected(Collider2D collision)
@@ -150,7 +150,6 @@ public class Player : MonoBehaviour
         if (damageable != null)
         {
             detectedDamageable.Add(damageable);
-            //Debug.Log("AddedInDamageList");
         }
 
         if (knockable != null)
@@ -166,7 +165,6 @@ public class Player : MonoBehaviour
 
         if (damageable != null)
         {
-            //Debug.Log("RemovedFromList");
             detectedDamageable.Remove(damageable);
         }
 
@@ -176,25 +174,28 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void CheckMeleeAttack(float weaponDamage, int damageType, float xDistance, Vector2 angle)  //is this bad practice?   
+    //Certain Frames will call this function and deal damage to all items in list
+    public void CheckMeleeAttack(float weaponDamage, int damageType, float xDistance, Vector2 angle)  
     {
         foreach (IDamageable item in detectedDamageable.ToList())
         {
-            item.Damage(weaponDamage, damageType);    //Weapon damage will depend on what the weapon number is
+            item.Damage(weaponDamage, damageType);    //damage
         }
 
         foreach (IKnockable item in detectedKnockable.ToList())
         {
-            item.Knockback(xDistance, angle, Input.direction); //direction is core direction //Should it be?
+            item.Knockback(xDistance, angle, Input.direction); 
         }
     }
     #endregion
 
-    private void OnTriggerEnter2D(Collider2D collision)  //if collider of this object collides with another collider    
+
+    //These trigger functions below detect whether or not two colliders contacted or left contact
+    private void OnTriggerEnter2D(Collider2D collision)  
     {
         AddToDetected(collision);
     }
-                                                         //These trigger functions bsasically add and remove stuff from the list
+                                                        
     private void OnTriggerExit2D(Collider2D collision)
     {
         RemoveFromDetected(collision);

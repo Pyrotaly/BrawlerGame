@@ -46,7 +46,7 @@ public class AirStates : PlayerState
             //LightCharged
             if (timer >= player.CharacterSelected.LightAttackData.LightAttackDetails[4].TimeTillCharged)
             {
-                stateMachine.ChangeState(player.CharacterSelected.Heavy); //Temporary
+                stateMachine.ChangeState(player.CharacterSelected.LightCharged); //Temporary
                 player.Input.Attack = false;
                 startTimer = false;
                 attacking = false;
@@ -128,7 +128,7 @@ public class AirStates : PlayerState
             //UpLightCharged
             if (timer >= player.CharacterSelected.LightAttackData.LightAttackDetails[6].TimeTillCharged)
             {
-                stateMachine.ChangeState(player.CharacterSelected.UpHeavy);
+                stateMachine.ChangeState(player.CharacterSelected.UpCharged);
                 player.Input.UpAttack = false;
                 startTimer = false;
                 upAttacking = false;

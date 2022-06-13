@@ -41,7 +41,7 @@ public class GroundStates : PlayerState
         #region Jump/Fall
         if (isJumping && player.isGrounded == true)
         {
-            stateMachine.ChangeState(player.JumpState); //player.pChar0.JumpState
+            stateMachine.ChangeState(player.JumpState); 
         }
 
         if (!isGrounded && player.RB2D.velocity.y < -0.5)
@@ -56,7 +56,7 @@ public class GroundStates : PlayerState
         }
 
         #region Attacks
-        if (player.Input.Attack)  //== true && isGrounded
+        if (player.Input.Attack)  
         {
             startTimer = true;
             attacking = true;
@@ -66,14 +66,14 @@ public class GroundStates : PlayerState
             {
                 startTimer = false;
                 attacking = false;
-                stateMachine.ChangeState(player.CharacterSelected.Heavy); //Temporarily heavy attack, will be light charged or charged attack
+                stateMachine.ChangeState(player.CharacterSelected.LightCharged); 
             }
         }
 
         //Light
         if (attacking && !player.Input.Attack)
         {
-            if (Time.time >= player.CharacterSelected.NextLightAttack[0]) //player.CharacterSelected.nextLightAttackTime
+            if (Time.time >= player.CharacterSelected.NextLightAttack[0]) 
             {
 
                 stateMachine.ChangeState(player.CharacterSelected.Light);
@@ -93,10 +93,10 @@ public class GroundStates : PlayerState
             startTimer = true;
             downAttacking = true;
 
-            //DownLightCharged
+            //DownCharged
             if (timer >= player.CharacterSelected.LightAttackData.LightAttackDetails[1].TimeTillCharged)
             {
-                stateMachine.ChangeState(player.CharacterSelected.DownHeavy);  //DownHeavy or DownCharged
+                stateMachine.ChangeState(player.CharacterSelected.DownCharged); 
                 player.Input.DownAttack = false;
                 startTimer = false;
                 downAttacking = false;
@@ -129,7 +129,7 @@ public class GroundStates : PlayerState
             //UpLightCharged
             if (timer >= player.CharacterSelected.LightAttackData.LightAttackDetails[2].TimeTillCharged)
             {
-                stateMachine.ChangeState(player.CharacterSelected.UpHeavy);
+                stateMachine.ChangeState(player.CharacterSelected.UpCharged);
                 player.Input.UpAttack = false;
                 startTimer = false;
                 upAttacking = false;

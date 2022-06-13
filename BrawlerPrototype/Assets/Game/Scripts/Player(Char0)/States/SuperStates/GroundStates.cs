@@ -64,10 +64,9 @@ public class GroundStates : PlayerState
             //LightCharged
             if (timer >= player.CharacterSelected.LightAttackData.LightAttackDetails[0].TimeTillCharged)
             {
-                stateMachine.ChangeState(player.CharacterSelected.Heavy); //Temporarily heavy attack, will be light charged or charged attack
-                player.Input.Attack = false;
                 startTimer = false;
                 attacking = false;
+                stateMachine.ChangeState(player.CharacterSelected.Heavy); //Temporarily heavy attack, will be light charged or charged attack
             }
         }
 

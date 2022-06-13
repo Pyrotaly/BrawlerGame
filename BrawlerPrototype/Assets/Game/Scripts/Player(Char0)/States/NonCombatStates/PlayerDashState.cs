@@ -31,7 +31,7 @@ public class PlayerDashState : AirStates
         core.Movement.SetVelocityX(55 * direction);
 
         #region Attacks
-        if (player.Input.Attack)  //== true 
+        if (player.Input.Attack)  
         {
             startTimer = true;
             dAttacking = true;

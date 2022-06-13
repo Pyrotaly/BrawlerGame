@@ -40,10 +40,9 @@ public class LightAttackState : GroundStates
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
-        Debug.Log("HOLA");
+
         if (!player.Input.Attack) 
         {
-            Debug.Log("HELLO");
             stateMachine.ChangeState(player.IdleState);
         }
     }

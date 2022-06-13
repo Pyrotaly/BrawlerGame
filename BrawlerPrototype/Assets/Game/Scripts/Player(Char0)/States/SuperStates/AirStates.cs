@@ -38,7 +38,7 @@ public class AirStates : PlayerState
         }
 
         #region Attacks
-        if (player.Input.Attack)  //== true && isGrounded
+        if (player.Input.Attack)  
         {
             startTimer = true;
             attacking = true;
@@ -46,7 +46,7 @@ public class AirStates : PlayerState
             //LightCharged
             if (timer >= player.CharacterSelected.LightAttackData.LightAttackDetails[4].TimeTillCharged)
             {
-                stateMachine.ChangeState(player.CharacterSelected.LightCharged); //Temporary
+                stateMachine.ChangeState(player.CharacterSelected.AirLight);
                 player.Input.Attack = false;
                 startTimer = false;
                 attacking = false;

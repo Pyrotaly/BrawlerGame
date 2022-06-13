@@ -38,12 +38,12 @@ public class BaseCharacter : MonoBehaviour
     [HideInInspector] public float[] CharacterHeavyCooldowns = new float[10];
     [HideInInspector] public float[] CharacterChargedHeavyCooldowns = new float[10];
 
-    public virtual void Awake()
+    protected virtual void Awake()
     {
         playerX = GetComponent<Player>();
     }
 
-    public virtual void Start() //Does it need to be virtual?
+    private void Start() 
     {
         for (int i = 0; i < LightAttackData.LightAttackDetails.Length; i++) //There should be the same length for all data types
         {

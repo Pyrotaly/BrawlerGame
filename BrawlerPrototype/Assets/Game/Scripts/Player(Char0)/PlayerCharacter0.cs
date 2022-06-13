@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCharacter0 : BaseCharacter
 {
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
 

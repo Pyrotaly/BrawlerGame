@@ -43,9 +43,8 @@ public class Char0DownLightAttackState : DownLightAttackState
     public override void WeaponAnimationTrigger()
     {
         base.WeaponAnimationTrigger();
-        //TEMPORARY
+
         GameObject[] projectiles = player.CharacterSelected.Projectiles;
-        //projectile = projectiles[0];
         projectile = GameObject.Instantiate(projectiles[0], player.CharacterSelected.RangeAttackStartingPosition[0].position, player.CharacterSelected.RangeAttackStartingPosition[0].rotation);
     }
 }

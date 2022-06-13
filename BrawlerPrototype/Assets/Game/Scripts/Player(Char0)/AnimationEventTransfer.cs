@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationEventTransfer : MonoBehaviour
+//The sprites are on different gameobject from the gameobject with the scripts, this script lets the sprites to call functions from the scripts
+public class AnimationEventTransfer : MonoBehaviour 
 {
     private Player player;
-    //private CombatStates combatState;
-    //Vector2 TopCorner, Vector2 DiagonolOpposite, LayerMask LayerMask
 
     private void Start()
     {
         player = GetComponentInParent<Player>();
-        //combatState = GetComponentInParent<CombatStates>();
     }
     private void AnimationTrigger()
     {
@@ -26,6 +24,5 @@ public class AnimationEventTransfer : MonoBehaviour
     private void WeaponAnimationTrigger()
     {
         player.StateMachine.CurrentState.WeaponAnimationTrigger();
-        //Debug.Log("BIGBIGBIG");
     }
 }

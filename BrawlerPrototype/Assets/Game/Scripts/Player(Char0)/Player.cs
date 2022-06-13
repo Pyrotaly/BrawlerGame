@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
 
         Core.Combat.CoreHealth = playerData.MaxHealth;
         HealthBar.SetMaxHealth(playerData.MaxHealth);
-        //FMOD_Test.PlaySound("event:/Character/Door Close");
+        //FMOD_Test.PlaySound("event:/Character/Door Close");          SoundManagerTesting
     }
 
     private void Update()   

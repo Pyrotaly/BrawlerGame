@@ -22,7 +22,6 @@ public class BaseEnemy : MonoBehaviour
     public bool Flying;
 
     public HealthBar EnemyHealthBar;
-    //public AnimatorControllerParameter[] parameters;              This is to set animators to be false by brute force
     public Animator Anim { get; private set; }
     public Core Core { get; private set; }
     public bool Damaged { get; private set; }                       //Used in Core
@@ -86,26 +85,6 @@ public class BaseEnemy : MonoBehaviour
         {
             Tree.Update();
         }
-
-        //Debug.Log("Close" + CheckPlayerInCloseRange());
-        //Debug.Log("Medium" + CheckPlayerInMediumRange());
-
-        //DyingManagement
-        //if (EnemyHealth <= 0)
-        //{
-        //    foreach (AnimatorControllerParameter parameter in Anim.parameters)
-        //    {
-        //        if (parameter.name == "Die")
-        //        {
-        //            Anim.SetBool(parameter.name, true);
-        //            Debug.Log("DeadOK");
-        //        }
-        //        else
-        //        {
-        //            Anim.SetBool(parameter.name, false);
-        //        }
-        //    }
-        //}
 
         #region DamageManagement
         if (Core.Combat.Damaged == true)

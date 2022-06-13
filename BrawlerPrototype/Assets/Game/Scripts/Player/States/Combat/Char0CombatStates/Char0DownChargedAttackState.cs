@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Char0DownChargedAttackState : DownHeavyAttackState
+public class Char0DownChargedAttackState : DownChargedAttackState
 {
     public Char0DownChargedAttackState(Player player, string animBoolName, D_HeavyAttacks HeavyAttackData) : base(player, animBoolName, HeavyAttackData)
     {

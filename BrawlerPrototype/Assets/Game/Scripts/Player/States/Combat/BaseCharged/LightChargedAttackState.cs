@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DownHeavyAttackState : GroundStates
+public class LightChargedAttackState : GroundStates
 {
     private D_HeavyAttacks HeavyAttackData;
-    public DownHeavyAttackState(Player player, string animBoolName, D_HeavyAttacks HeavyAttackData) : base(player, animBoolName)
+    public LightChargedAttackState(Player player, string animBoolName, D_HeavyAttacks HeavyAttackData) : base(player, animBoolName)
     {
         this.HeavyAttackData = HeavyAttackData;
-    } 
+    }
 
-    public override void DoChecks()
+    public override void AnimationFinishedTrigger()
     {
-        base.DoChecks();
+        base.AnimationFinishedTrigger();
+        stateMachine.ChangeState(player.IdleState);
+    }
+
+    public override void AnimationTrigger()
+    {
+        base.AnimationTrigger();
     }
 
     public override void Enter()
@@ -36,17 +42,6 @@ public class DownHeavyAttackState : GroundStates
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-    }
-
-    public override void AnimationTrigger()
-    {
-        base.AnimationTrigger();
-    }
-
-    public override void AnimationFinishedTrigger()
-    {
-        base.AnimationFinishedTrigger();
-        stateMachine.ChangeState(player.IdleState);
     }
 
     public override void WeaponAnimationTrigger()

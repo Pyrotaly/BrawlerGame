@@ -21,10 +21,6 @@ namespace TheKiwiCoder {
             return treeState;
         }
 
-        //public void Abort()
-        //{
-        //    rootNode.Abort();
-        //}
 
         public static List<Node> GetChildren(Node parent) {
             List<Node> children = new List<Node>();

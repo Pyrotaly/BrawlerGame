@@ -126,19 +126,7 @@ public class GroundStates : PlayerState
             startTimer = true;
             upAttacking = true;
 
-            //UpLightCharged
-            if (timer >= player.CharacterSelected.LightAttackData.LightAttackDetails[2].TimeTillCharged)
-            {
-                stateMachine.ChangeState(player.CharacterSelected.UpCharged);
-                player.Input.UpAttack = false;
-                startTimer = false;
-                upAttacking = false;
-            }
-        }
-
-        //UpLight
-        if (upAttacking && !player.Input.UpAttack)
-        {
+            //UpLight
             if (Time.time >= player.CharacterSelected.NextLightAttack[2])
             {
                 player.CharacterSelected.NextLightAttack[2] = Time.time + player.CharacterSelected.CharacterLightCooldowns[2];
@@ -151,7 +139,6 @@ public class GroundStates : PlayerState
                 upAttacking = false;
             }
         }
-
         #endregion
     }
 

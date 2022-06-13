@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Char0LightChargedAttackState : HeavyAttackState
+public class Char0LightChargedAttackState : LightChargedAttackState
 {
     public Char0LightChargedAttackState(Player player, string animBoolName, D_HeavyAttacks HeavyAttackData) : base(player, animBoolName, HeavyAttackData)
     {

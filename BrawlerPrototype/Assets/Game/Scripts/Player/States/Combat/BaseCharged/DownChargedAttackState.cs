@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpHeavyAttackState : GroundStates
+public class DownChargedAttackState : GroundStates
 {
     private D_HeavyAttacks HeavyAttackData;
-    public UpHeavyAttackState(Player player, string animBoolName, D_HeavyAttacks HeavyAttackData) : base(player, animBoolName)
+    public DownChargedAttackState(Player player, string animBoolName, D_HeavyAttacks HeavyAttackData) : base(player, animBoolName)
     {
         this.HeavyAttackData = HeavyAttackData;
+    } 
+
+    public override void DoChecks()
+    {
+        base.DoChecks();
     }
 
     public override void Enter()
@@ -25,13 +30,14 @@ public class UpHeavyAttackState : GroundStates
 
     public override void LogicUpdate()
     {
-        base.LogicUpdate();   
+        base.LogicUpdate();
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
     }
+
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();

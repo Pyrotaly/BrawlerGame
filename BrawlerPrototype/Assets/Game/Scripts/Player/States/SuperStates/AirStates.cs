@@ -46,7 +46,7 @@ public class AirStates : PlayerState
             //AirLightCharged
             if (timer >= player.CharacterSelected.LightAttackData.LightAttackDetails[4].TimeTillCharged)
             {
-                stateMachine.ChangeState(player.CharacterSelected.AirLight);
+                //stateMachine.ChangeState(player.CharacterSelected.AirLightCharged);    No AirLightCharged state implemented yet
                 player.Input.Attack = false;
                 startTimer = false;
                 attacking = false;
@@ -59,7 +59,7 @@ public class AirStates : PlayerState
             if (Time.time >= player.CharacterSelected.NextLightAttack[4]) //player.CharacterSelected.nextLightAttackTime
             {
                 player.CharacterSelected.NextLightAttack[4] = Time.time + player.CharacterSelected.CharacterLightCooldowns[4];
-                stateMachine.ChangeState(player.CharacterSelected.Light);
+                stateMachine.ChangeState(player.CharacterSelected.AirLight);
                 startTimer = false;
                 attacking = false;
             }
@@ -79,7 +79,7 @@ public class AirStates : PlayerState
             //DownLightCharged
             if (timer >= player.CharacterSelected.LightAttackData.LightAttackDetails[5].TimeTillCharged)
             {
-                //stateMachine.ChangeState(player.CharacterSelected.DownHeavy);
+                //stateMachine.ChangeState(player.CharacterSelected.AirDownCharged);   //No AirDownCharged state implemented yet
                 player.Input.DownAttack = false;
                 startTimer = false;
                 downAttacking = false;

@@ -2,18 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeavyAttackState : GroundStates
+public class Char0AirDownAttackState : AirDownLightAttackState
 {
-    private D_HeavyAttacks HeavyAttackData;
-    public HeavyAttackState(Player player, string animBoolName, D_HeavyAttacks HeavyAttackData) : base(player, animBoolName)
+    public Char0AirDownAttackState(Player player, string animBoolName, D_LightAttacks LightAttackData) : base(player, animBoolName, LightAttackData)
     {
-        this.HeavyAttackData = HeavyAttackData;
     }
 
     public override void AnimationFinishedTrigger()
     {
         base.AnimationFinishedTrigger();
-        stateMachine.ChangeState(player.IdleState);
     }
 
     public override void AnimationTrigger()
@@ -24,19 +21,17 @@ public class HeavyAttackState : GroundStates
     public override void Enter()
     {
         base.Enter();
-        player.CanFlip = false;
-        player.AnimCombat.SetBool("Heavy", true);
     }
 
     public override void Exit()
     {
         base.Exit();
-        player.AnimCombat.SetBool("Heavy", false);
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        player.Core.Movement.SetVelocityY(6);
     }
 
     public override void PhysicsUpdate()

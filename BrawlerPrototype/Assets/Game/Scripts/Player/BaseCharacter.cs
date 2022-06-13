@@ -7,17 +7,18 @@ public class BaseCharacter : MonoBehaviour
     public Player playerX { get; private set; }
 
     public LightAttackState Light;
-
+    public LightChargedAttackState LightCharged;
     public DownLightAttackState DownLight;
+    public DownChargedAttackState DownCharged;
+
     public UpLightAttackState UpLight;
-    public DashAttackState DashAttack;
 
     public AirLightAttackState AirLight;
+    public AirLightChargedAttackState AirLightCharged;
     public AirDownLightAttackState AirDownLight;
+    public AirDownChargedAttackState AirDownCharged;
 
-    public HeavyAttackState LightCharged;
-    public DownHeavyAttackState DownCharged;
-    public UpHeavyAttackState UpCharged;
+    public DashAttackState DashAttack;
 
     [Header("Data")]
     public D_LightAttacks LightAttackData;

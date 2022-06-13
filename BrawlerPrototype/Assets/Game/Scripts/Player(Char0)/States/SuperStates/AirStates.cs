@@ -43,7 +43,7 @@ public class AirStates : PlayerState
             startTimer = true;
             attacking = true;
 
-            //LightCharged
+            //AirLightCharged
             if (timer >= player.CharacterSelected.LightAttackData.LightAttackDetails[4].TimeTillCharged)
             {
                 stateMachine.ChangeState(player.CharacterSelected.AirLight);
@@ -53,7 +53,7 @@ public class AirStates : PlayerState
             }
         }
 
-        //Light
+        //AirLight
         if (attacking && !player.Input.Attack)
         {
             if (Time.time >= player.CharacterSelected.NextLightAttack[4]) //player.CharacterSelected.nextLightAttackTime

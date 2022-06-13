@@ -8,8 +8,6 @@ public class BaseCharacter : MonoBehaviour
 
     public LightAttackState Light;
 
-    public LightAttackSpam LightSpam;
-
     public DownLightAttackState DownLight;
     public UpLightAttackState UpLight;
     public DashLightAttackState DashLight;

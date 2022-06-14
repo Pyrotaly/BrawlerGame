@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFodder : MonoBehaviour
+public class EnemyFodder : BaseEnemy
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void AttackAnimationTrigger()
     {
-        
-    }
+        base.AttackAnimationTrigger();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
     }
 }

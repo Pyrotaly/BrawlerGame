@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Combat : CoreComponent, IDamageable, IKnockable
 {
-    //float for stamina for the heroes
+    //float stamina           For bosses 
     public float CoreHealth;
-    public HealthBar CoreHealthBar;
+    //public HealthBar CoreHealthBar;
 
     public bool Blocking;
     public bool Damaged;
@@ -27,7 +27,7 @@ public class Combat : CoreComponent, IDamageable, IKnockable
             CoreHealth -= damageAmount;
         }
         
-        CoreHealthBar.SetHealth(CoreHealth);
+        //CoreHealthBar.SetHealth(CoreHealth);
     }
 
     public void Knockback(float strength, Vector2 angle, int direction)

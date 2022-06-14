@@ -21,7 +21,6 @@ public class BaseEnemy : MonoBehaviour
     [HideInInspector] public bool AnimationDone;                    //USED IN NODES BUT COULD BE REMOVED LATER
     public bool Flying;
 
-    public HealthBar EnemyHealthBar;
     public Animator Anim { get; private set; }
     public Core Core { get; private set; }
     public bool Damaged { get; private set; }                       //Used in Core
@@ -42,12 +41,10 @@ public class BaseEnemy : MonoBehaviour
     [HideInInspector] public float[] EnemyNextHeavyAttack = new float[10];
 
     [HideInInspector] public float[] EnemyLightCooldowns = new float[10];           //Currently, array is set to 10 but might need to change in the future
-    [HideInInspector] public float[] EnemyChargedLightCooldowns = new float[10];
+    [HideInInspector] public float[] EnemyChargedLightCooldowns = new float[10];    
     [HideInInspector] public float[] EnemyHeavyCooldowns = new float[10];
     [HideInInspector] public float[] EnemyChargedHeavyCooldowns = new float[10];
 
-    [HideInInspector] public bool[] EnemyCanLightAttack = new bool[10];
-    [HideInInspector] public bool[] EnemyCanHeavyAttack = new bool[10];
     public virtual void Awake()
     {
         Core = GetComponentInChildren<Core>();
@@ -60,9 +57,7 @@ public class BaseEnemy : MonoBehaviour
 
     public virtual void Start()
     {
-        TestDirection = 1;
         Core.Combat.CoreHealth = BaseData.MaxHealth;
-        EnemyHealthBar.SetMaxHealth(BaseData.MaxHealth);
 
         for (int i = 0; i < EnemyLightAttackData.LightAttackDetails.Length; i++) //These should be the same length for all data types
         {
@@ -358,7 +353,7 @@ public class BaseEnemy : MonoBehaviour
     #endregion
     #endregion
 
-    //Checks where the player is, used in BehaviorTree moving
+    //Checks where the player is, used in BehaviorTree movement nodes
     public void CheckPositions()
     {
         PlayerPosition = new Vector3(target.position.x, transform.position.y, transform.position.z);
@@ -372,6 +367,7 @@ public class BaseEnemy : MonoBehaviour
         Destroy(this);
     }
 
+    //Allows checks to be visible 
     public virtual void OnDrawGizmos()
     {
         if (Core != null)

@@ -94,6 +94,7 @@ public class Player : MonoBehaviour
 
 
         PlayerHealth = Core.Combat.CoreHealth;
+        HealthBar.SetHealth(Core.Combat.CoreHealth);
 
         Core.LogicUpdate();
         StateMachine.CurrentState.LogicUpdate();

@@ -22,13 +22,15 @@ public class Char0LightChargedAttackState : LightChargedAttackState
     public override void Enter()
     {
         base.Enter();
-        if (player.AttackCounter >= 4 || player.AttackCounter < 3)
+        if (player.AttackCounter >= 1)
         {
-            player.AttackCounter = 3;
+            player.AttackCounter = 0;
+            player.AnimCombat.SetInteger("attackCounter", 0);
         }
         else
         {
             player.AttackCounter++;
+            player.AnimCombat.SetInteger("attackCounter", 1);
         }
     }
 

@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
 
     private void Update()   
     {
-        AnimCombat.SetInteger("attackCounter", AttackCounter);
+        //AnimCombat.SetInteger("attackCounter", AttackCounter);
 
 
 

@@ -5,20 +5,12 @@ using TheKiwiCoder;
 
 public class BaseEnemy : MonoBehaviour
 {
-    public BehaviourTree Tree;
-    private readonly float positionUpdateFrequency = 0.1f;
+    [SerializeField] private BehaviourTree EnemyTree;
+    private readonly float positionUpdateFrequency = 0.1f;          //Checks player position every given interval instead of every update
     [HideInInspector] private Transform target;                     //COULD BE AN ERROR OF NOT GETTING PLAYER IN FUTURE
     [HideInInspector] public Vector3 PlayerPosition;
     [SerializeField] private Transform playerDistanceRayPosition;   //Where the ray that checks player is located on enemy
-    [SerializeField] private Transform playerMediumDistanceRayPosition;
     [SerializeField] public D_BaseEnemy BaseData;
-
-    [Header("Combat")]
-    [SerializeField] public Transform meleeAttackPosition;
-    [HideInInspector] public int EnemyDamageType;
-    [HideInInspector] public int DamagedType;                       //When enemy is damaged, this int determines what damage type the damage dealt was
-    [HideInInspector] public float EnemyHealth;
-    public bool Flying;       
 
     public Animator Anim { get; private set; }
     public Core Core { get; private set; }
@@ -29,20 +21,22 @@ public class BaseEnemy : MonoBehaviour
     protected bool canFlip;
 
     [Header("Combat")]
+    [SerializeField] public Transform meleeAttackPosition;
+    [HideInInspector] public int DamagedType;                       //When enemy is damaged, this int determines what damage type the damage dealt was
+    [HideInInspector] public float EnemyHealth;
     public GameObject[] EnemyProjectiles;
     public Transform[] EnemyRangeAttackStartingPosition;
+    public bool Flying;                                             //Planning on flying enemies in the future
 
     [Header("Data")]
     public D_LightAttacks EnemyLightAttackData;
-    public D_HeavyAttacks EnemyHeavyAttackData;
 
     [HideInInspector] public float[] EnemyNextLightAttack = new float[10];
     [HideInInspector] public float[] EnemyNextHeavyAttack = new float[10];
 
     [HideInInspector] public float[] EnemyLightCooldowns = new float[10];           //Currently, array is set to 10 but might need to change in the future
     [HideInInspector] public float[] EnemyChargedLightCooldowns = new float[10];    
-    [HideInInspector] public float[] EnemyHeavyCooldowns = new float[10];
-    [HideInInspector] public float[] EnemyChargedHeavyCooldowns = new float[10];
+
 
     public virtual void Awake()
     {
@@ -50,8 +44,8 @@ public class BaseEnemy : MonoBehaviour
         Anim = GetComponent<Animator>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        Tree.Bind(Core, this, Anim);                                //Gets access to the data script
-        Tree = Tree.Clone();                                        //Duplicates behavior tree if another script has the exact same MovementTree
+        EnemyTree.Bind(Core, this, Anim);                            //Gets access to the data script
+        EnemyTree = EnemyTree.Clone();                               //Duplicates behavior tree if another script has the exact same MovementTree
     }
 
     public virtual void Start()
@@ -62,9 +56,6 @@ public class BaseEnemy : MonoBehaviour
         {
             EnemyLightCooldowns[i] = EnemyLightAttackData.LightAttackDetails[i].BasicCooldown;
             EnemyChargedLightCooldowns[i] = EnemyLightAttackData.LightAttackDetails[i].ChargedCooldown;
-
-            EnemyHeavyCooldowns[i] = EnemyHeavyAttackData.HeavyAttackDetails[i].BasicCooldown;
-            EnemyChargedHeavyCooldowns[i] = EnemyHeavyAttackData.HeavyAttackDetails[i].ChargedCooldown;
         }
     }
 
@@ -75,9 +66,9 @@ public class BaseEnemy : MonoBehaviour
 
         InvokeRepeating("CheckPositions", 0f, positionUpdateFrequency); //This is used in movement nodes
 
-        if (Tree)
+        if (EnemyTree)
         {
-            Tree.Update();
+            EnemyTree.Update();
         }
 
         #region DamageManagement
@@ -164,12 +155,12 @@ public class BaseEnemy : MonoBehaviour
 
     public virtual bool CheckPlayerInMediumRange()
     {
-        return Physics2D.Raycast(playerMediumDistanceRayPosition.position, transform.right, BaseData.CheckPlayerInMediumRange, BaseData.WhatIsPlayer);
+        return Physics2D.Raycast(playerDistanceRayPosition.position, transform.right, BaseData.CheckPlayerInMediumRange, BaseData.WhatIsPlayer);
     }
 
     public virtual bool CheckPlayerInLongRange()
     {
-        return Physics2D.Raycast(playerMediumDistanceRayPosition.position, transform.right, BaseData.CheckPlayerInLongRange, BaseData.WhatIsPlayer);
+        return Physics2D.Raycast(playerDistanceRayPosition.position, transform.right, BaseData.CheckPlayerInLongRange, BaseData.WhatIsPlayer);
     }
 
     public virtual bool CheckTouchingBorder()
@@ -217,7 +208,7 @@ public class BaseEnemy : MonoBehaviour
             Gizmos.color = Color.blue; //min agro
             Gizmos.DrawWireSphere(playerDistanceRayPosition.position + (Vector3)(Vector2.right * BaseData.CheckPlayerInCloseRange), 0.2f); //6
             Gizmos.color = Color.yellow; //medium agro
-            Gizmos.DrawWireSphere(playerMediumDistanceRayPosition.position + (Vector3)(Vector2.right * BaseData.CheckPlayerInMediumRange), 0.2f); //8
+            Gizmos.DrawWireSphere(playerDistanceRayPosition.position + (Vector3)(Vector2.right * BaseData.CheckPlayerInMediumRange), 0.2f); //8
             Gizmos.color = Color.white; // long Range
             Gizmos.DrawWireSphere(playerDistanceRayPosition.position + (Vector3)(Vector2.right * BaseData.CheckPlayerInLongRange), 0.2f); // 7
 
@@ -231,6 +222,8 @@ public class BaseEnemy : MonoBehaviour
 
             Gizmos.color = Color.red; //ground check
             Gizmos.DrawWireSphere(Core.CollisionSenses.GroundCheck.position, (4)); //baseData.groundCheckRadius
+
+            Gizmos.DrawWireSphere(meleeAttackPosition.position, EnemyLightAttackData.LightAttackDetails[0].DamageRadius);
         }
     }
 }

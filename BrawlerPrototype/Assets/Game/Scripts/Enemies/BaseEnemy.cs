@@ -18,8 +18,7 @@ public class BaseEnemy : MonoBehaviour
     [HideInInspector] public int EnemyDamageType;
     [HideInInspector] public int DamagedType;                       //When enemy is damaged, this int determines what damage type the damage dealt was
     [HideInInspector] public float EnemyHealth;
-    [HideInInspector] public bool AnimationDone;                    //USED IN NODES BUT COULD BE REMOVED LATER
-    public bool Flying;
+    public bool Flying;       
 
     public Animator Anim { get; private set; }
     public Core Core { get; private set; }
@@ -186,7 +185,6 @@ public class BaseEnemy : MonoBehaviour
 
     public void AnimationFinishTrigger()
     {
-        AnimationDone = true;
         canFlip = true;
     }
 
@@ -358,10 +356,7 @@ public class BaseEnemy : MonoBehaviour
     {
         PlayerPosition = new Vector3(target.position.x, transform.position.y, transform.position.z);
     }
-    public void TurnOffAnimationDone()
-    {
-        AnimationDone = false;
-    }
+
     public void Die()
     {
         Destroy(this);

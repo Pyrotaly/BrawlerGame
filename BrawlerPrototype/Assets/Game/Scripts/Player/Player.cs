@@ -105,6 +105,7 @@ public class Player : MonoBehaviour
             FindObjectOfType<BasicGameManager>().EndGame();
             FindObjectOfType<BasicGameManager>().EnemyWinsScreen();
         }
+
         #region IFrame Management
         if (IsDashing)
         {

@@ -49,20 +49,22 @@ public class LightAttackState : GroundStates
         base.PhysicsUpdate();
     }
 
-    public override void AnimationTrigger()
+    public override void AnimationTrigger() //Char0 slam finish
     {
         base.AnimationTrigger();
+
+        player.CheckMeleeAttack(80, 1, 3, new Vector2(3, 5));
     }
 
     public override void AnimationFinishedTrigger()
     {
         base.AnimationFinishedTrigger();
-        stateMachine.ChangeState(player.IdleState);
+        stateMachine.ChangeState(player.IdleState); 
     }
 
     public override void WeaponAnimationTrigger()
     {
         base.WeaponAnimationTrigger();
-        player.CheckMeleeAttack(400, 3, 3, new Vector2(3,5));
+        player.CheckMeleeAttack(80, 0, 3, new Vector2(3,5));
     }
 }

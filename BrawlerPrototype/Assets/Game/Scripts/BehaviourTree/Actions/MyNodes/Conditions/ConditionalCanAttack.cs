@@ -14,6 +14,7 @@ public class ConditionalCanAttack : ActionNode
 
     protected override State OnUpdate() {
 
+
         if (Time.time >= Enemy.EnemyNextLightAttack[ArrayCooldownInt]) //player.CharacterSelected.nextLightAttackTime
         {
             return State.Success;

@@ -53,6 +53,7 @@ public class Char0LightChargedAttackState : LightChargedAttackState
     public override void WeaponAnimationTrigger()
     {
         base.WeaponAnimationTrigger();
+        player.CheckMeleeAttack(190, 1, 3, new Vector2(3, 5));
     }
 }
 

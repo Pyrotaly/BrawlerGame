@@ -37,6 +37,7 @@ public class LightChargedAttackState : GroundStates
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        attacking = false;
     }
 
     public override void PhysicsUpdate()

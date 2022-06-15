@@ -1313,7 +1313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.3537142, y: 4.062053, z: -5.4210606}
+  m_LocalPosition: {x: 3.3529704, y: 4.1517816, z: -5.4210606}
   m_LocalScale: {x: 0.66638, y: 0.9079427, z: 0.66638}
   m_Children: []
   m_Father: {fileID: 187450309}
@@ -1805,7 +1805,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0015016, y: 1}
+    m_SensorSize: {x: 1.7782608, y: 1}
   m_Transitions:
     m_BlendHint: 1
     m_InheritPosition: 0
@@ -2097,6 +2097,8 @@ GameObject:
   - component: {fileID: 982376149}
   - component: {fileID: 982376151}
   - component: {fileID: 982376152}
+  - component: {fileID: 982376153}
+  - component: {fileID: 982376154}
   m_Layer: 0
   m_Name: Fodder
   m_TagString: Untagged
@@ -2164,7 +2166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982376148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.02, y: -1.22, z: 0}
+  m_LocalPosition: {x: -15.55, y: -1.22, z: 0}
   m_LocalScale: {x: 0.38771, y: 0.38771, z: 0.38771}
   m_Children:
   - {fileID: 1993649003}
@@ -2205,17 +2207,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ece36912c45bb5746aa925ae49d8d755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyTree: {fileID: 11400000, guid: e8e0cfe599e14b549b6da3bc3a9ae805, type: 2}
   PlayerPosition: {x: 0, y: 0, z: 0}
   playerDistanceRayPosition: {fileID: 303775851}
   BaseData: {fileID: 11400000, guid: 4a4855fdb4bae1b46a0e4cb8ed5352a0, type: 2}
+  EnemyTree: {fileID: 11400000, guid: e8e0cfe599e14b549b6da3bc3a9ae805, type: 2}
+  DamageFlash: {fileID: 982376154}
+  TestDirection: 0
   meleeAttackPosition: {fileID: 1457471242}
   DamagedType: 0
   EnemyHealth: 0
-  Flying: 0
-  TestDirection: 0
   EnemyProjectiles: []
   EnemyRangeAttackStartingPosition: []
+  Flying: 0
   EnemyLightAttackData: {fileID: 11400000, guid: c79a721900f1b9e47908255ba84dcccb, type: 2}
   EnemyNextLightAttack:
   - 0
@@ -2261,6 +2264,41 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+--- !u!50 &982376153
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982376148}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &982376154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982376148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7fc44a7d8977d46b866f47aa1dd19b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 199e8024200786d45bfa6b71d9a50775, type: 2}
+  duration: 0.1
 --- !u!1 &1032355827
 GameObject:
   m_ObjectHideFlags: 0
@@ -3485,6 +3523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoreHealth: 5000
+  DamageFlash: {fileID: 0}
   Blocking: 0
   Damaged: 0
   CoreDamageType: 0
@@ -5411,7 +5450,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.065644264, y: -3.2627296}
+  m_Offset: {x: -0.065644264, y: -2.8730044}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5422,7 +5461,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.7618647, y: 12.1907425}
+  m_Size: {x: 5.7618647, y: 11.411292}
   m_EdgeRadius: 0
 --- !u!114 &2138012044
 MonoBehaviour:
@@ -5437,6 +5476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoreHealth: 5000
+  DamageFlash: {fileID: 0}
   Blocking: 0
   Damaged: 0
   CoreDamageType: 0
@@ -5501,6 +5541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoreHealth: 100
+  DamageFlash: {fileID: 0}
   Blocking: 0
   Damaged: 0
   CoreDamageType: 0
@@ -6563,15 +6604,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 388f724e7ba58a941b04fb463076f646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyTree: {fileID: 0}
   PlayerPosition: {x: 0, y: 0, z: 0}
   playerDistanceRayPosition: {fileID: 633804415546007143}
   BaseData: {fileID: 11400000, guid: 50085357543465b44b08f2eacd474f11, type: 2}
+  EnemyTree: {fileID: 0}
+  DamageFlash: {fileID: 0}
+  TestDirection: 0
   meleeAttackPosition: {fileID: 1224951534}
   DamagedType: 0
   EnemyHealth: 0
-  Flying: 0
-  TestDirection: 0
   EnemyProjectiles:
   - {fileID: 2889525667296597269, guid: fcaa486f1ab3440419daca03df9acdda, type: 3}
   - {fileID: 27062243824411840, guid: 988823943b5ddfd458c66ef1f1e15e15, type: 3}
@@ -6580,6 +6621,7 @@ MonoBehaviour:
   EnemyRangeAttackStartingPosition:
   - {fileID: 1224951534}
   - {fileID: 498599196}
+  Flying: 0
   EnemyLightAttackData: {fileID: 11400000, guid: a0d58948b5751934dab3ca4d5ceef2bb, type: 2}
   EnemyNextLightAttack:
   - 0

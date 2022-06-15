@@ -230,7 +230,6 @@ MonoBehaviour:
   TestInt: 0
   description: 
   drawGizmos: 0
-  AnimParameter: 
 --- !u!114 &-2388006969360152061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,7 +415,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 556d4b7205d3d814f91c2c794ddedd24
-  position: {x: -1288, y: 368}
+  position: {x: -1288, y: 367}
   Core: {fileID: 0}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}

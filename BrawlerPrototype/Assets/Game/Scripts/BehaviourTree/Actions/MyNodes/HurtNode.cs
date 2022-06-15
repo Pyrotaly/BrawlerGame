@@ -16,22 +16,24 @@ public class HurtNode : ActionNode
         AnimatorNodes.SetBool("Move", false);
         AnimatorNodes.SetBool("Flee", false);
 
-        //foreach (AnimatorControllerParameter parameter in AnimatorNodes.parameters)
-        //{
-        //    if (parameter.name == "Hurt")
-        //    {
-        //        AnimatorNodes.SetBool(parameter.name, true);
-        //    }
-        //    else
-        //    {
-        //        AnimatorNodes.SetBool(parameter.name, false);
-        //    }
-        //}
+
+        AnimatorNodes.SetInteger("damageType", Core.Combat.CoreDamageType);
 
         if (Enemy.Damaged)
         {
-            Debug.Log("Hurting");
-            AnimatorNodes.SetBool("Hurt", true);
+            //AnimatorNodes.SetBool("Hurt", true);   Use this if enemy attacks should not be interrupted
+
+            foreach (AnimatorControllerParameter parameter in AnimatorNodes.parameters)
+            {
+                if (parameter.name == "Hurt")
+                {
+                    AnimatorNodes.SetBool(parameter.name, true);
+                }
+                else
+                {
+                    AnimatorNodes.SetBool(parameter.name, false);
+                }
+            }
 
             return State.Success;
         }

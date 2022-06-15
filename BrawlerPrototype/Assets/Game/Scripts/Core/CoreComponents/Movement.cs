@@ -25,13 +25,13 @@ public class Movement : CoreComponent
 
     public void SetVelocity(float velocity, Vector2 angle, int direction)
     {
-        if (canKnockUp)
-        {
+        //if (canKnockUp)
+        //{
             angle.Normalize();
             workspace.Set(angle.x * velocity * direction, angle.y * velocity);
             RB2D.velocity = workspace;
             CurrentVelocity = workspace;
-        }
+        //}
         //SetFinalVelocity();
     }
 

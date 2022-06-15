@@ -20,7 +20,7 @@ MonoBehaviour:
     BasicCooldown: 3
     BasicDamageType: 0
     DamageRadius: 3
-    knockbackStrength: 0
+    knockbackStrength: 2
     knockbackAngle: {x: 2, y: 2}
     TimeTillCharged: 0
     ChargedCooldown: 0

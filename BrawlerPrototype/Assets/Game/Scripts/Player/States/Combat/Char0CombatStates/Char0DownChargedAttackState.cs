@@ -42,5 +42,6 @@ public class Char0DownChargedAttackState : DownChargedAttackState
     public override void WeaponAnimationTrigger()
     {
         base.WeaponAnimationTrigger();
+        player.CheckMeleeAttack(140, 2, 20, new Vector2(10, 20));
     }
 }

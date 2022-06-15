@@ -30,6 +30,7 @@ public class GroundStates : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        Debug.Log("attacking" + attacking);
 
         Timer();
 
@@ -66,7 +67,8 @@ public class GroundStates : PlayerState
             {
                 startTimer = false;
                 attacking = false;
-                stateMachine.ChangeState(player.CharacterSelected.LightCharged); 
+
+                stateMachine.ChangeState(player.CharacterSelected.LightCharged);
             }
         }
 

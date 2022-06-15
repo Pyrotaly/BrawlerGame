@@ -5,12 +5,15 @@ using TheKiwiCoder;
 
 public class BaseEnemy : MonoBehaviour
 {
-    [SerializeField] private BehaviourTree EnemyTree;
-    private readonly float positionUpdateFrequency = 0.1f;          //Checks player position every given interval instead of every update
+
     [HideInInspector] private Transform target;                     //COULD BE AN ERROR OF NOT GETTING PLAYER IN FUTURE
     [HideInInspector] public Vector3 PlayerPosition;
     [SerializeField] private Transform playerDistanceRayPosition;   //Where the ray that checks player is located on enemy
+    private readonly float positionUpdateFrequency = 0.1f;          //Checks player position every given interval instead of every update
+
     [SerializeField] public D_BaseEnemy BaseData;
+    [SerializeField] private BehaviourTree EnemyTree;
+    public DamageFlash DamageFlash;
 
     public Animator Anim { get; private set; }
     public Core Core { get; private set; }
@@ -76,6 +79,7 @@ public class BaseEnemy : MonoBehaviour
         {
             Damaged = true;
             DamagedType = Core.Combat.CoreDamageType;
+            //DamageFlash.Flash();
         }
         else
         {
@@ -142,10 +146,10 @@ public class BaseEnemy : MonoBehaviour
         {
             return false;
         }
-    }
+    } 
     public virtual bool CheckPlayerInMeleeRange()
     {
-        return Physics2D.Raycast(playerDistanceRayPosition.position, transform.right, BaseData.CheckTouchingBorderRange, BaseData.WhatIsBorder);
+        return Physics2D.Raycast(playerDistanceRayPosition.position, transform.right, BaseData.CheckPlayerInMeleeRange, BaseData.WhatIsPlayer);
     }
 
     public virtual bool CheckPlayerInCloseRange()         

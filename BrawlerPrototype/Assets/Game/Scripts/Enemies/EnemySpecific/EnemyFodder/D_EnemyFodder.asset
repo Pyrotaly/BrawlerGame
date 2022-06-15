@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487858272072d9e4481bff4dc74ce76c, type: 3}
   m_Name: D_EnemyFodder
   m_EditorClassIdentifier: 
-  MaxHealth: 30
+  MaxHealth: 500
   WallCheckDistance: 0.2
   LedgeCheckDistance: 0.4
   GroundCheckRadius: 0.03
-  CheckPlayerInMeleeRange: 2
-  CheckPlayerInCloseRange: 3
-  CheckPlayerInMediumRange: 4
-  CheckPlayerInLongRange: 4
+  CheckPlayerInMeleeRange: 5
+  CheckPlayerInCloseRange: 27
+  CheckPlayerInMediumRange: 29
+  CheckPlayerInLongRange: 999
   CheckTouchingBorderRange: 3
   CloseRangeActionDistance: 1
   WhatIsGround:

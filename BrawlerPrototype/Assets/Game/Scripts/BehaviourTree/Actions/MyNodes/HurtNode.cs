@@ -12,26 +12,43 @@ public class HurtNode : ActionNode
     }
 
     protected override State OnUpdate() {
-        Core.Movement.SetVelocityX(0);
+
         AnimatorNodes.SetBool("Move", false);
         AnimatorNodes.SetBool("Flee", false);
-
 
         AnimatorNodes.SetInteger("damageType", Core.Combat.CoreDamageType);
 
         if (Enemy.Damaged)
         {
-            //AnimatorNodes.SetBool("Hurt", true);   Use this if enemy attacks should not be interrupted
 
-            foreach (AnimatorControllerParameter parameter in AnimatorNodes.parameters)
+            if (Enemy.Core.CollisionSenses.Ground)
             {
-                if (parameter.name == "Hurt")
-                {   
-                    AnimatorNodes.SetBool(parameter.name, true);
-                }
-                else
+                Core.Movement.SetVelocityX(0);
+
+                foreach (AnimatorControllerParameter parameter in AnimatorNodes.parameters)
                 {
-                    AnimatorNodes.SetBool(parameter.name, false);   
+                    if (parameter.name == "Hurt")
+                    {
+                        AnimatorNodes.SetBool(parameter.name, true);
+                    }
+                    else
+                    {
+                        AnimatorNodes.SetBool(parameter.name, false);
+                    }
+                }
+            }
+            else
+            {
+                foreach (AnimatorControllerParameter parameter in AnimatorNodes.parameters)
+                {
+                    if (parameter.name == "KnockUp")
+                    {
+                        AnimatorNodes.SetBool(parameter.name, true);
+                    }
+                    else
+                    {
+                        AnimatorNodes.SetBool(parameter.name, false);
+                    }
                 }
             }
 

@@ -245,7 +245,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 2878f143a4fffb4418c3f0745856d297
-  position: {x: -844.9811, y: 509}
+  position: {x: 1149.24, y: 513}
   Core: {fileID: 0}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
@@ -269,7 +269,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: eea01d6a7c0915b44941432443a5691a
-  position: {x: -1004.981, y: 512}
+  position: {x: 989.2401, y: 516}
   Core: {fileID: 0}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
@@ -645,7 +645,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: e1b7feb548fafae498f15bb532607c92
-  position: {x: -945, y: 372}
+  position: {x: 1049.2401, y: 376}
   Core: {fileID: 0}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
@@ -684,10 +684,10 @@ MonoBehaviour:
   children:
   - {fileID: 1155450695772088050}
   - {fileID: 1888471169322202546}
-  - {fileID: 7636868713884864746}
   - {fileID: -5919393255974762850}
   - {fileID: -1878314176880866510}
   - {fileID: 4364629200397187673}
+  - {fileID: 7636868713884864746}
 --- !u!114 &8722113745088637793
 MonoBehaviour:
   m_ObjectHideFlags: 0

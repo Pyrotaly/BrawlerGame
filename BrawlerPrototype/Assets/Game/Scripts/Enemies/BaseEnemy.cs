@@ -76,32 +76,34 @@ public class BaseEnemy : MonoBehaviour
             EnemyTree.Update();
         }
 
-        Debug.Log("Ground" + Core.CollisionSenses.Ground);
-
         #region DamageManagement
-        if (Core.Combat.Damaged == true && Core.Combat.CoreDamageType != 2) //Struck by a non-knockup attack
+        if (Core.Combat.Damaged == true) //Struck by a non-knockup attack
         {
-            Damaged = true;
-            DamagedType = Core.Combat.CoreDamageType;
-        }
-        else if (Core.Combat.CoreDamageType == 2) //Struck by a knockup
-        {
-            Damaged = true;
-            Core.Movement.canKnockUp = false;
-            timeStamp += Time.deltaTime;
-            
-            if (timeStamp >= BaseData.KnockUpVulnerabilityTime)
-            {
-                Core.Movement.SetVelocityY(BaseData.FallVelocity);
 
+            if (Core.Combat.CoreDamageType != 2)
+            {
+                Damaged = true;
+                DamagedType = Core.Combat.CoreDamageType;
+            }
+            else                //Struck by knockup
+            {
+                Damaged = true;
+                Core.Movement.canKnockUp = false;
+                timeStamp += Time.deltaTime;
+
+                if (timeStamp >= BaseData.KnockUpVulnerabilityTime)
+                {
+                    Core.Movement.SetVelocityY(BaseData.FallVelocity);
+                }
+
+                if (Core.CollisionSenses.Ground)
+                {
+                    timeStamp = 0;
+                    Damaged = false;
+                    Core.Movement.canKnockUp = true;
+                }
             }
 
-            if (Core.CollisionSenses.Ground)
-            {
-                timeStamp = 0;
-                Damaged = false;
-                Core.Movement.canKnockUp = true;
-            }
         }
         else
         {

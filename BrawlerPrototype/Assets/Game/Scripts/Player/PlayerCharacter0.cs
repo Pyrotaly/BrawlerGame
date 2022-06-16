@@ -15,7 +15,7 @@ public class PlayerCharacter0 : BaseCharacter
 
         UpLight = new UpLightAttackState(playerX, "UpAttack", LightAttackData);
 
-        AirLight = new AirLightAttackState(playerX, "AirAttack", LightAttackData);
+        AirLight = new Char0AirLightAttackState(playerX, "AirAttack", LightAttackData);
         AirDownLight = new Char0AirDownAttackState(playerX, "AirDownAttack", LightAttackData);
         //AirLightCharged = new AirLightChargedAttackState
         //AirDownCharged

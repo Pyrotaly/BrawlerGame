@@ -91,8 +91,6 @@ public class Player : MonoBehaviour
     {
         //AnimCombat.SetInteger("attackCounter", AttackCounter);
 
-
-
         PlayerHealth = Core.Combat.CoreHealth;
         HealthBar.SetHealth(Core.Combat.CoreHealth);
 

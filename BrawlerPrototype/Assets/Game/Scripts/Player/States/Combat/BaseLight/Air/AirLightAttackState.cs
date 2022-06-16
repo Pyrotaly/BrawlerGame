@@ -5,6 +5,8 @@ using UnityEngine;
 public class AirLightAttackState : AirStates
 {
     private D_LightAttacks lightAttackData;
+    protected float timeStamp;
+
     public AirLightAttackState(Player player, string animBoolName, D_LightAttacks lightAttackData) : base(player, animBoolName)
     {
         this.lightAttackData = lightAttackData;
@@ -19,12 +21,26 @@ public class AirLightAttackState : AirStates
     public override void Exit()
     {
         base.Exit();
+        player.CharacterSelected.NextLightAttack[4] = Time.time + player.CharacterSelected.CharacterLightCooldowns[4];
         player.AnimCombat.SetBool("Light", false);
+        timeStamp = 0;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        player.Core.Movement.SetVelocityX(xInput * 10);
+        player.Core.Movement.SetVelocityY(2.5f);
+
+        if (!player.Input.Attack)
+        {
+            timeStamp += Time.deltaTime;
+            if (timeStamp >= 0.3)
+            {
+                stateMachine.ChangeState(player.IdleState);
+            }
+        }
     }
 
     public override void PhysicsUpdate()    

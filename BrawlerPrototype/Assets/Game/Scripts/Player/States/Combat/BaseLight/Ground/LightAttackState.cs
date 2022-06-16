@@ -15,7 +15,6 @@ public class LightAttackState : GroundStates
     public override void Enter()
     {
         base.Enter();
-
         player.CanFlip = false;
         player.AnimCombat.SetBool("Light", true);
     }
@@ -23,6 +22,7 @@ public class LightAttackState : GroundStates
     public override void Exit()
     {
         base.Exit();
+        player.CharacterSelected.NextLightAttack[0] = Time.time + player.CharacterSelected.CharacterLightCooldowns[0];
         player.AnimCombat.SetBool("Light", false);
         timeStamp = 0;
     }

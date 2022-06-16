@@ -58,7 +58,6 @@ public class AirStates : PlayerState
         {
             if (Time.time >= player.CharacterSelected.NextLightAttack[4]) //player.CharacterSelected.nextLightAttackTime
             {
-                player.CharacterSelected.NextLightAttack[4] = Time.time + player.CharacterSelected.CharacterLightCooldowns[4];
                 stateMachine.ChangeState(player.CharacterSelected.AirLight);
                 startTimer = false;
                 attacking = false;

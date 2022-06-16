@@ -32,7 +32,6 @@ public class Movement : CoreComponent
             RB2D.velocity = workspace;
             CurrentVelocity = workspace;
         //}
-        //SetFinalVelocity();
     }
 
     public void SetVelocityZero()

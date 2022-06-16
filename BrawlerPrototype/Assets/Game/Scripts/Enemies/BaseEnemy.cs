@@ -18,6 +18,8 @@ public class BaseEnemy : MonoBehaviour
     public Core Core { get; private set; }
     public bool Damaged { get; private set; }                       //Used in Core
 
+    private float timeStamp;
+
     private float dirNum;                                           //It is used in Update
     public int TestDirection;
     public bool CanFlip;
@@ -53,6 +55,7 @@ public class BaseEnemy : MonoBehaviour
     public virtual void Start()
     {
         Core.Combat.CoreHealth = BaseData.MaxHealth;
+        Core.Movement.canKnockUp = true;
 
         for (int i = 0; i < EnemyLightAttackData.LightAttackDetails.Length; i++) //These should be the same length for all data types
         {
@@ -84,9 +87,20 @@ public class BaseEnemy : MonoBehaviour
         else if (Core.Combat.CoreDamageType == 2) //Struck by a knockup
         {
             Damaged = true;
+            Core.Movement.canKnockUp = false;
+            timeStamp += Time.deltaTime;
+            
+            if (timeStamp >= BaseData.KnockUpVulnerabilityTime)
+            {
+                Core.Movement.SetVelocityY(BaseData.FallVelocity);
+
+            }
+
             if (Core.CollisionSenses.Ground)
             {
+                timeStamp = 0;
                 Damaged = false;
+                Core.Movement.canKnockUp = true;
             }
         }
         else
@@ -233,7 +247,7 @@ public class BaseEnemy : MonoBehaviour
                 (Vector3)(Vector2.right * BaseData.CheckTouchingBorderRange)); 
 
             Gizmos.color = Color.red; //ground check
-            Gizmos.DrawWireSphere(Core.CollisionSenses.GroundCheck.position, (4)); //baseData.groundCheckRadius
+            Gizmos.DrawWireSphere(Core.CollisionSenses.GroundCheck.position, (BaseData.GroundCheckRadius)); //baseData.groundCheckRadius
 
             Gizmos.DrawWireSphere(meleeAttackPosition.position, EnemyLightAttackData.LightAttackDetails[0].DamageRadius);
         }

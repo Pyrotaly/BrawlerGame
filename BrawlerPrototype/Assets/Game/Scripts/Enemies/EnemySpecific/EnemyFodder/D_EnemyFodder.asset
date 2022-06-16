@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487858272072d9e4481bff4dc74ce76c, type: 3}
   m_Name: D_EnemyFodder
   m_EditorClassIdentifier: 
-  MaxHealth: 500
+  MaxHealth: 5000
   WallCheckDistance: 0.2
   LedgeCheckDistance: 0.4
-  GroundCheckRadius: 0.03
+  GroundCheckRadius: 1.49
   CheckPlayerInMeleeRange: 5
   CheckPlayerInCloseRange: 27
   CheckPlayerInMediumRange: 29
@@ -31,6 +31,7 @@ MonoBehaviour:
   WhatIsBorder:
     serializedVersion: 2
     m_Bits: 128
-  FallVelocity: 0
+  FallVelocity: -33.5
+  KnockUpVulnerabilityTime: 5.5
   RunToMovementSpeed: 12
   RunFromMovementSpeed: 10

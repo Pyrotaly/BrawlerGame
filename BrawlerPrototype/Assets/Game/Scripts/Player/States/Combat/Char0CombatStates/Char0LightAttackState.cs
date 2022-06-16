@@ -27,7 +27,6 @@ public class Char0LightAttackState : LightAttackState
     public override void Exit()
     {
         base.Exit();
-        player.CharacterSelected.NextLightAttack[0] = Time.time + player.CharacterSelected.CharacterLightCooldowns[0];
     }
 
     public override void LogicUpdate()

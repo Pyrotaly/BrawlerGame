@@ -5,7 +5,7 @@ using UnityEngine;
 public class LightAttackState : GroundStates
 {
     public D_LightAttacks lightAttackData;
-    private float timeStamp;
+    protected float timeStamp;
 
     public LightAttackState(Player player, string animBoolName, D_LightAttacks lightAttackData) : base(player, animBoolName)
     {
@@ -23,7 +23,6 @@ public class LightAttackState : GroundStates
     public override void Exit()
     {
         base.Exit();
-        player.CharacterSelected.NextLightAttack[0] = Time.time + player.CharacterSelected.CharacterLightCooldowns[0];
         player.AnimCombat.SetBool("Light", false);
         timeStamp = 0;
     }
@@ -49,11 +48,9 @@ public class LightAttackState : GroundStates
         base.PhysicsUpdate();
     }
 
-    public override void AnimationTrigger() //Char0 slam finish
+    public override void AnimationTrigger() 
     {
         base.AnimationTrigger();
-
-        player.CheckMeleeAttack(80, 1, 3, new Vector2(3, 5));
     }
 
     public override void AnimationFinishedTrigger()
@@ -65,6 +62,5 @@ public class LightAttackState : GroundStates
     public override void WeaponAnimationTrigger()
     {
         base.WeaponAnimationTrigger();
-        player.CheckMeleeAttack(80, 0, 3, new Vector2(3,5));
     }
 }

@@ -94,7 +94,6 @@ public class AirStates : PlayerState
                 player.CharacterSelected.NextLightAttack[5] = Time.time + player.CharacterSelected.CharacterLightCooldowns[5];
                 startTimer = false;
                 downAttacking = false;
-                Debug.Log(player.CharacterSelected.NextLightAttack[5]);
                 stateMachine.ChangeState(player.CharacterSelected.AirDownLight);
             }
             else

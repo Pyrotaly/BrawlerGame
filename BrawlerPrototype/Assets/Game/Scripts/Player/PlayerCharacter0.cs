@@ -8,7 +8,7 @@ public class PlayerCharacter0 : BaseCharacter
     {
         base.Awake();
 
-        Light = new LightAttackState(playerX, "Attack", LightAttackData);
+        Light = new Char0LightAttackState(playerX, "Attack", LightAttackData);
         LightCharged = new Char0LightChargedAttackState(playerX, "AttackCharged", HeavyAttackData);
         DownLight = new Char0DownLightAttackState(playerX, "DownAttack", LightAttackData);
         DownCharged = new Char0DownChargedAttackState(playerX, "DownCharged", HeavyAttackData);

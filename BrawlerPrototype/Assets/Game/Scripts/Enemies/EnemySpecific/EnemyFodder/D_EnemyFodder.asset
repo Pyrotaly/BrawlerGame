@@ -32,5 +32,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   FallVelocity: 0
-  RunToMovementSpeed: 0
-  RunFromMovementSpeed: 0
+  RunToMovementSpeed: 12
+  RunFromMovementSpeed: 10

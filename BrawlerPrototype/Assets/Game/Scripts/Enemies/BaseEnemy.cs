@@ -13,7 +13,6 @@ public class BaseEnemy : MonoBehaviour
 
     [SerializeField] public D_BaseEnemy BaseData;
     [SerializeField] private BehaviourTree EnemyTree;
-    public DamageFlash DamageFlash;
 
     public Animator Anim { get; private set; }
     public Core Core { get; private set; }
@@ -21,7 +20,7 @@ public class BaseEnemy : MonoBehaviour
 
     private float dirNum;                                           //It is used in Update
     public int TestDirection;
-    protected bool canFlip;
+    public bool CanFlip;
 
     [Header("Combat")]
     [SerializeField] public Transform meleeAttackPosition;
@@ -74,12 +73,21 @@ public class BaseEnemy : MonoBehaviour
             EnemyTree.Update();
         }
 
+        Debug.Log("Ground" + Core.CollisionSenses.Ground);
+
         #region DamageManagement
-        if (Core.Combat.Damaged == true)
+        if (Core.Combat.Damaged == true && Core.Combat.CoreDamageType != 2) //Struck by a non-knockup attack
         {
             Damaged = true;
             DamagedType = Core.Combat.CoreDamageType;
-            //DamageFlash.Flash();
+        }
+        else if (Core.Combat.CoreDamageType == 2) //Struck by a knockup
+        {
+            Damaged = true;
+            if (Core.CollisionSenses.Ground)
+            {
+                Damaged = false;
+            }
         }
         else
         {
@@ -93,11 +101,11 @@ public class BaseEnemy : MonoBehaviour
 
         if (!Core.CollisionSenses.Ground)
         {
-            canFlip = false;
+            CanFlip = false;
         }
         else
         {
-            canFlip = true;
+            CanFlip = true;
         }
         #endregion
     }
@@ -114,12 +122,12 @@ public class BaseEnemy : MonoBehaviour
         float dir = Vector3.Dot(perp, up);                      //1.The Dot product will determine float direction       
                                                                 //2. The second variable "up" is vector where it casts a line and then it will be compared. 
                                                                 //3. "up" is like a line above enemy, if player is on left side of line, a negative value.  If right side, positive value
-        if (dir > 0f && canFlip)
+        if (dir > 0f && CanFlip)
         {
             Core.Movement.RB2D.transform.Rotate(0.0f, 0.0f, 0.0f);
             return 1f;
         }
-        else if (dir < 0f && canFlip)
+        else if (dir < 0f && CanFlip)
         {
             Core.Movement.RB2D.transform.Rotate(0.0f, 180.0f, 0.0f);
             TestDirection = 1;
@@ -180,7 +188,7 @@ public class BaseEnemy : MonoBehaviour
 
     public void AnimationFinishTrigger()
     {
-        canFlip = true;
+        CanFlip = true;
     }
 
     public virtual void AttackAnimationTrigger()

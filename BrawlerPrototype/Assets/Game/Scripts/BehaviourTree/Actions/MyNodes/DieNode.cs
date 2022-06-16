@@ -17,10 +17,10 @@ public class DieNode : ActionNode
 
         Core.Movement.SetVelocityX(0);
 
-
-
         if (Enemy.EnemyHealth <= 0) 
         {
+            Enemy.CanFlip = false;
+
             foreach (AnimatorControllerParameter parameter in AnimatorNodes.parameters)
             {
                 if (parameter.name == "Die")

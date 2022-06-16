@@ -26,12 +26,12 @@ public class HurtNode : ActionNode
             foreach (AnimatorControllerParameter parameter in AnimatorNodes.parameters)
             {
                 if (parameter.name == "Hurt")
-                {
+                {   
                     AnimatorNodes.SetBool(parameter.name, true);
                 }
                 else
                 {
-                    AnimatorNodes.SetBool(parameter.name, false);
+                    AnimatorNodes.SetBool(parameter.name, false);   
                 }
             }
 

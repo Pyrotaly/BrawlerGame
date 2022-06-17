@@ -16,10 +16,9 @@ MonoBehaviour:
   - AttackName: BasicSlash
     DamageAmount: 20
     MovementSpeed: 0
-    ProjectileSpeed: 0
-    BasicCooldown: 3
+    BasicCooldown: 10
     BasicDamageType: 0
-    DamageRadius: 3
+    DamageRadius: 6.67
     knockbackStrength: 2
     knockbackAngle: {x: 2, y: 2}
     TimeTillCharged: 0

@@ -25,7 +25,6 @@ public class BaseEnemy : MonoBehaviour
     public Core Core { get; private set; }
     public bool Damaged { get; private set; }                       //Used in Core
 
-    private float timeStamp;
     private float dirNum;                                           //It is used in Update
     [HideInInspector] public bool CanFlip;
 
@@ -41,7 +40,7 @@ public class BaseEnemy : MonoBehaviour
         Core.Combat.CoreHealth = BaseData.MaxHealth;
     }
 
-    public virtual void Update()
+    protected virtual void Update()
     {
         Core.LogicUpdate();
         EnemyHealth = Core.Combat.CoreHealth;
@@ -75,7 +74,7 @@ public class BaseEnemy : MonoBehaviour
         #endregion
     }
 
-    protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
 
     } 

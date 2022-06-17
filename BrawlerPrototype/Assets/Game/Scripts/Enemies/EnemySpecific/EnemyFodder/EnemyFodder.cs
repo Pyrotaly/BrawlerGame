@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFodder : BaseEnemy
+public class EnemyFodder : BaseMook
 {
     private int direction;
     public override void AttackAnimationTrigger()
@@ -17,26 +17,23 @@ public class EnemyFodder : BaseEnemy
         {
             direction = -1;
         }
+    }
 
-        //Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(meleeAttackPosition.position, EnemyLightAttackData.LightAttackDetails[0].DamageRadius, BaseData.WhatIsPlayer);
+    protected override void Update()
+    {
+        base.Update();
 
-        //foreach (Collider2D collider in detectedObjects)
-        //{
-        //    IDamageable damageable = collider.GetComponent<IDamageable>();
+        //Checks if enemy can attack and then move to player to hit or hit player if already there
+        if (Time.time >= NextAttackTime && EnemyAttackTokenManagement.AttackTokens != 0)
+        {
+            EnemyAttackTokenManagement.AttackTokens--;
 
-        //    if (damageable != null)
-        //    {
-        //        damageable.Damage(EnemyLightAttackData.LightAttackDetails[0].DamageAmount, EnemyLightAttackData.LightAttackDetails[0].BasicDamageType);
-        //    }
-
-        //    IKnockable knockbackable = collider.GetComponent<IKnockable>();
-
-        //    if (knockbackable != null)
-        //    {
-        //        knockbackable.Knockback(EnemyLightAttackData.LightAttackDetails[0].knockbackStrength, EnemyLightAttackData.LightAttackDetails[0].knockbackAngle, direction);
-        //    }
-        //}
-
-        //EnemyNextLightAttack[0] = Time.time + EnemyLightCooldowns[0];
+            StateMachine.ChangeState(MoveState);
+            
+            if (CheckPlayerInMeleeRange())
+            {
+                StateMachine.ChangeState(AttackState);
+            }
+        }
     }
 }

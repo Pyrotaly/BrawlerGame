@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyState : MonoBehaviour
+public class EnemyState 
 {
     protected EnemyStateMachine stateMachine;
-    protected BaseEnemy entity;
+    protected BaseMook entity;
     protected Core core;
 
     protected string animBoolName;
 
-    public EnemyState(BaseEnemy entity, EnemyStateMachine stateMachine, string animBoolName)
+    public EnemyState(BaseMook entity, EnemyStateMachine stateMachine, string animBoolName)
     {
         this.entity = entity;
         this.stateMachine = stateMachine;

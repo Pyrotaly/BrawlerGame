@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyRangeAttackState : EnemyAttackState
 {
     //protected D_EnemyRangeAttack stateData;
-    public EnemyRangeAttackState(BaseEnemy entity, EnemyStateMachine stateMachine, string animBoolName, 
+    public EnemyRangeAttackState(BaseMook entity, EnemyStateMachine stateMachine, string animBoolName, 
         Transform attackPosition) : base(entity, stateMachine, animBoolName, attackPosition)
     {
         this.attackPosition = attackPosition;

@@ -1253,7 +1253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.352976, y: 4.1519437, z: -5.4210606}
+  m_LocalPosition: {x: 3.3529704, y: 4.1521573, z: -5.4210606}
   m_LocalScale: {x: 0.66638, y: 0.9079427, z: 0.66638}
   m_Children: []
   m_Father: {fileID: 187450309}
@@ -1715,7 +1715,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.779661, y: 1}
+    m_SensorSize: {x: 1.7815126, y: 1}
   m_Transitions:
     m_BlendHint: 1
     m_InheritPosition: 0
@@ -4275,6 +4275,61 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1981256231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1981256233}
+  - component: {fileID: 1981256232}
+  m_Layer: 0
+  m_Name: Testing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1981256232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981256231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece36912c45bb5746aa925ae49d8d755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerPosition: {x: 0, y: 0, z: 0}
+  playerDistanceRayPosition: {fileID: 0}
+  EnemyProjectiles: []
+  EnemyRangeAttackStartingPosition: []
+  DamagedType: 0
+  EnemyHealth: 0
+  BaseData: {fileID: 0}
+  EnemyLightData: {fileID: 0}
+  CanFlip: 0
+  AttackPosition: {fileID: 0}
+  AttackCooldown: 0
+  NextAttackTime: 0
+--- !u!4 &1981256233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981256231}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.623955, y: 2.249942, z: -2.0155115}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1991343208
 GameObject:
   m_ObjectHideFlags: 0
@@ -5032,7 +5087,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3c43e09717bff4f88333b1863c7503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canKnockUp: 0
 --- !u!1 &413365039682311622
 GameObject:
   m_ObjectHideFlags: 0
@@ -5087,7 +5141,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 57.6, y: 32.399998}
+    oldSize: {x: 16.6, y: 15.57}
     newSize: {x: 57.6, y: 32.399998}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5836,7 +5890,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3c43e09717bff4f88333b1863c7503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canKnockUp: 0
 --- !u!212 &633804417257569046
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5960,13 +6013,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerPosition: {x: 0, y: 0, z: 0}
   playerDistanceRayPosition: {fileID: 633804415546007143}
-  BaseData: {fileID: 11400000, guid: 50085357543465b44b08f2eacd474f11, type: 2}
-  EnemyTree: {fileID: 0}
-  TestDirection: 0
-  CanFlip: 0
-  meleeAttackPosition: {fileID: 1224951534}
-  DamagedType: 0
-  EnemyHealth: 0
   EnemyProjectiles:
   - {fileID: 2889525667296597269, guid: fcaa486f1ab3440419daca03df9acdda, type: 3}
   - {fileID: 27062243824411840, guid: 988823943b5ddfd458c66ef1f1e15e15, type: 3}
@@ -5975,52 +6021,11 @@ MonoBehaviour:
   EnemyRangeAttackStartingPosition:
   - {fileID: 1224951534}
   - {fileID: 498599196}
-  Flying: 0
-  EnemyLightAttackData: {fileID: 11400000, guid: a0d58948b5751934dab3ca4d5ceef2bb, type: 2}
-  EnemyNextLightAttack:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  EnemyNextHeavyAttack:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  EnemyLightCooldowns:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  EnemyChargedLightCooldowns:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  DamagedType: 0
+  EnemyHealth: 0
+  BaseData: {fileID: 11400000, guid: 50085357543465b44b08f2eacd474f11, type: 2}
+  EnemyLightData: {fileID: 0}
+  CanFlip: 0
 --- !u!50 &633804417257569053
 Rigidbody2D:
   serializedVersion: 4
@@ -6127,6 +6132,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fodder
       objectReference: {fileID: 0}
+    - target: {fileID: 4212230041817042286, guid: 3bab538771775fb43aedeb2911182b07, type: 3}
+      propertyPath: AttackPosition
+      value: 
+      objectReference: {fileID: 4212230041908941751}
+    - target: {fileID: 4212230041817042286, guid: 3bab538771775fb43aedeb2911182b07, type: 3}
+      propertyPath: EnemyLightData
+      value: 
+      objectReference: {fileID: 11400000, guid: c79a721900f1b9e47908255ba84dcccb, type: 2}
     - target: {fileID: 4212230041817042287, guid: 3bab538771775fb43aedeb2911182b07, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -6141,3 +6154,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bab538771775fb43aedeb2911182b07, type: 3}
+--- !u!4 &4212230041908941751 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4212230040540927327, guid: 3bab538771775fb43aedeb2911182b07, type: 3}
+  m_PrefabInstance: {fileID: 4212230041908941750}
+  m_PrefabAsset: {fileID: 0}

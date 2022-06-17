@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAttackState : EnemyState
 {
     protected Transform attackPosition;
-    public EnemyAttackState(BaseEnemy entity, EnemyStateMachine stateMachine, string animBoolName, Transform attackPosition) : base(entity, stateMachine, animBoolName)
+    public EnemyAttackState(BaseMook entity, EnemyStateMachine stateMachine, string animBoolName, Transform attackPosition) : base(entity, stateMachine, animBoolName)
     {
         this.attackPosition = attackPosition;
     }
@@ -40,8 +40,7 @@ public class EnemyAttackState : EnemyState
 
     public virtual void FinishAttack()
     {
-        //    isAnimationFinished = true;
+        entity.NextAttackTime = Time.time + entity.AttackCooldown;  //Could have more specialized attacks in the future
+        EnemyAttackTokenManagement.AttackTokens++;
     }
-
-
 }

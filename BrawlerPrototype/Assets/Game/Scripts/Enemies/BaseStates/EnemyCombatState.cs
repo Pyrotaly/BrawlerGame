@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyCombatState : EnemyState
 {
-    public EnemyCombatState(BaseEnemy entity, EnemyStateMachine stateMachine, string animBoolName) : base(entity, stateMachine, animBoolName)
+    public EnemyCombatState(BaseMook entity, EnemyStateMachine stateMachine, string animBoolName) : base(entity, stateMachine, animBoolName)
     {
     }
 

@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDetectedState : EnemyState
+public class EnemyClimbState : EnemyState
 {
-    protected bool isPlayerInMinAgroRange;
-    protected bool isPlayerInMaxAgroRange;
-    public PlayerDetectedState(BaseEnemy entity, EnemyStateMachine stateMachine, string animBoolName) : base(entity, stateMachine, animBoolName)
+    
+    protected bool isDetectingLedge;
+
+    public EnemyClimbState(BaseMook entity, EnemyStateMachine stateMachine, string animBoolName) : base(entity, stateMachine, animBoolName)
     {
     }
+
 
     public override void Enter()
     {
@@ -28,5 +30,6 @@ public class PlayerDetectedState : EnemyState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        isDetectingLedge = core.CollisionSenses.LedgeCheck;
     }
 }

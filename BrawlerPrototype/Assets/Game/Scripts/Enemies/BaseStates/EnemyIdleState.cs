@@ -6,7 +6,7 @@ public class EnemyIdleState : EnemyState
 {
     protected bool isPlayerInMinAgroRange;
 
-    public EnemyIdleState(BaseEnemy entity, EnemyStateMachine stateMachine, string animBoolName) : base(entity, stateMachine, animBoolName)
+    public EnemyIdleState(BaseMook entity, EnemyStateMachine stateMachine, string animBoolName) : base(entity, stateMachine, animBoolName)
     {
     }
 
@@ -24,7 +24,6 @@ public class EnemyIdleState : EnemyState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        //isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
     }
 
     public override void PhysicsUpdate()

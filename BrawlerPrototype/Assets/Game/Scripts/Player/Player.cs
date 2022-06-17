@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
         DieState = new PlayerDieState(this, "Die");
         FallLandState = new PlayerFallLandState(this, "FallLand");
 
+        //Originally planned to have character selection implemented
         if(gameObject.GetComponent("PlayerCharacter0") != null)
         {
             CharacterSelected = GetComponent<PlayerCharacter0>();

@@ -32,7 +32,7 @@ public class BaseBoss : BaseEnemy
         }
     }
 
-    public override void Update()
+    protected override void Update()
     {
         base.Update();
 

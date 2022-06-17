@@ -33,7 +33,7 @@ public class D_BaseEnemy : ScriptableObject
     public float FallVelocity;
     public float KnockUpVulnerabilityTime;
 
-    [Header("TestNodeValues")]
+    [Header("MoveSpeed")]
     public float RunToMovementSpeed;
     public float RunFromMovementSpeed;
 }

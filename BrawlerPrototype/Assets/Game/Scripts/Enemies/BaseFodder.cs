@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class BaseFodder : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Player Targeting")]
+    [SerializeField] private Transform target;
+    [SerializeField] private float PositionUpdateFrequency;
+    protected Vector3 playerPosition;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //[SerializeField]
+    //public D_EnemyMeleeAttack enemyMeleeAttackData;
 }

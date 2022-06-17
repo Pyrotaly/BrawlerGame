@@ -15,11 +15,13 @@ public class EnemyAttackState : EnemyState
     {
         base.Enter();
         core.Movement.SetVelocityZero();
+        EnemyAttackTokenManagement.AttackTokens--;
     }
 
     public override void Exit()
     {
         base.Exit();
+        EnemyAttackTokenManagement.AttackTokens++;
     }
 
     public override void LogicUpdate()
@@ -40,7 +42,18 @@ public class EnemyAttackState : EnemyState
 
     public virtual void FinishAttack()
     {
-        entity.NextAttackTime = Time.time + entity.AttackCooldown;  //Could have more specialized attacks in the future
-        EnemyAttackTokenManagement.AttackTokens++;
+
+    }
+
+    public override void AnimationTrigger()
+    {
+        base.AnimationTrigger();
+    }
+
+    public override void AnimationFinishedTrigger()
+    {
+        base.AnimationFinishedTrigger();
+        //entity.NextAttackTime = Time.time + entity.AttackCooldown;  //Could have more specialized attacks in the future
+        entity.NextAttackTime = Time.time + 6;
     }
 }

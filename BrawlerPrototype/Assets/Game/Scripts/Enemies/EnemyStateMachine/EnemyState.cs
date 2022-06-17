@@ -21,6 +21,7 @@ public class EnemyState
     public virtual void Enter()
     {
         entity.Anim.SetBool(animBoolName, true);
+        Debug.Log(animBoolName);
     }
 
     public virtual void Exit()

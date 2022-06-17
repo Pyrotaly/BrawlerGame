@@ -15,6 +15,7 @@ public class EnemyHurtState : EnemyState
     {
         base.AnimationFinishedTrigger();
         stateMachine.ChangeState(entity.IdleState);
+        Debug.Log("HAHA");
     }
 
     public override void AnimationTrigger()

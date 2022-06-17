@@ -14,7 +14,8 @@ public class BaseMook : BaseEnemy
     public EnemyMoveState MoveState { get; private set; }
     public EnemyDieState DieState { get; private set; }
     public EnemyHurtState HurtState { get; private set; }
-    public EnemyAttackState AttackState { get; private set; }
+    public EnemyAttackState AttackState; // { get; private set; }
+    public EnemyFleeState FleeState { get; private set; }
 
     public float AttackCooldown;
     public float NextAttackTime;
@@ -28,7 +29,7 @@ public class BaseMook : BaseEnemy
         MoveState = new EnemyMoveState(this, StateMachine, "Move", BaseData);
         DieState = new EnemyDieState(this, StateMachine, "Die");
         HurtState = new EnemyHurtState(this, StateMachine, "Hurt", BaseData);
-        AttackState = new EnemyAttackState(this, StateMachine, "Attack", AttackPosition);  //In future, make class more specific for enemies
+        FleeState = new EnemyFleeState(this, StateMachine, "Flee", BaseData);
     }
 
     protected override void Start()

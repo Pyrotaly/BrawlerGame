@@ -159,6 +159,10 @@ public class BaseEnemy : MonoBehaviour
     }
     #endregion
 
+    public void CheckPositions()
+    {
+        PlayerPosition = new Vector3(target.position.x, transform.position.y, transform.position.z);
+    }
 
     public void Die()
     {

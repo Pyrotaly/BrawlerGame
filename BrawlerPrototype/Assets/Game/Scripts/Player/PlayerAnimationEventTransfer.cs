@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //The sprites are on different gameobject from the gameobject with the scripts, this script lets the sprites to call functions from the scripts
-public class AnimationEventTransfer : MonoBehaviour 
+public class PlayerAnimationEventTransfer : MonoBehaviour 
 {
     private Player player;
 

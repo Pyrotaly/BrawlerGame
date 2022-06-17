@@ -11,6 +11,7 @@ public class FodderAttackState : EnemyAttackState
     public override void AnimationFinishedTrigger()
     {
         base.AnimationFinishedTrigger();
+        stateMachine.ChangeState(entity.FleeState);
     }
 
     public override void AnimationTrigger()

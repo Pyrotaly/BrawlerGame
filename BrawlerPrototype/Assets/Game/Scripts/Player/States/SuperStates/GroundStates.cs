@@ -30,7 +30,6 @@ public class GroundStates : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        Debug.Log("attacking" + attacking);
 
         Timer();
 

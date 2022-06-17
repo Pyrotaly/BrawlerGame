@@ -19,15 +19,28 @@ public class EnemyFodder : BaseMook
         }
     }
 
+    protected override void Awake()
+    {
+        base.Awake();
+        AttackState = new FodderAttackState(this, StateMachine, "Attack", AttackPosition);  //In future, make class more specific for enemies
+    }
+
+
     protected override void Update()
     {
         base.Update();
 
+        //Debug.Log("MeleeRange" + CheckPlayerInMeleeRange());
+        //Debug.Log("AttackToken" + EnemyAttackTokenManagement.AttackTokens);
+
+        if (Time.time >= NextAttackTime)
+        {
+            Debug.Log("Attack");
+        }
+
         //Checks if enemy can attack and then move to player to hit or hit player if already there
         if (Time.time >= NextAttackTime && EnemyAttackTokenManagement.AttackTokens != 0)
         {
-            EnemyAttackTokenManagement.AttackTokens--;
-
             StateMachine.ChangeState(MoveState);
             
             if (CheckPlayerInMeleeRange())

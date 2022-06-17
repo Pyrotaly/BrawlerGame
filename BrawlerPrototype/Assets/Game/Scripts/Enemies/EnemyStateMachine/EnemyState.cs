@@ -18,15 +18,32 @@ public class EnemyState : MonoBehaviour
         core = entity.Core;
     }
 
-
-    void Start()
+    public virtual void Enter()
     {
-        
+        entity.Anim.SetBool(animBoolName, true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void Exit()
     {
-        
+        entity.Anim.SetBool(animBoolName, false);
+    }
+
+    public virtual void LogicUpdate()
+    {
+    }
+
+    public virtual void PhysicsUpdate()
+    {
+
+    }
+
+    public virtual void AnimationTrigger()
+    {
+
+    }
+
+    public virtual void AnimationFinishedTrigger()
+    {
+
     }
 }

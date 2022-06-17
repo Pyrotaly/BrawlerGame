@@ -5,42 +5,62 @@ using TheKiwiCoder;
 
 public class HurtNode : ActionNode
 {
-    protected override void OnStart() {
-    }
-
-    protected override void OnStop() {
-    }
-
-    protected override State OnUpdate() {
-
-        AnimatorNodes.SetInteger("damageType", Core.Combat.CoreDamageType);
+    private bool KnockedUp;
+    protected override void OnStart()
+    {
 
         if (Core.Combat.CoreDamageType == 2)
         {
-            return State.Success;
+            KnockedUp = true;
         }
-        else if (Enemy.Core.CollisionSenses.Ground)
-        {
-            return State.Failure;
-        }
+    }
 
-        if (Enemy.Damaged)
+    protected override void OnStop()
+    {
+    }
+
+    protected override State OnUpdate()
+    {
+
+        AnimatorNodes.SetInteger("damageType", Core.Combat.CoreDamageType);
+
+        if (KnockedUp)
         {
+            foreach (AnimatorControllerParameter parameter in AnimatorNodes.parameters)
+            {
+                if (parameter.name == "KnockUp")
+                {
+                    AnimatorNodes.SetBool(parameter.name, true);
+                }
+                else
+                {
+                    AnimatorNodes.SetBool(parameter.name, false);
+                }
+            }
 
             if (Enemy.Core.CollisionSenses.Ground)
             {
-                Core.Movement.SetVelocityX(0);
+                AnimatorNodes.SetBool("KnockUp", false);
+                KnockedUp = false;
+            }
 
-                foreach (AnimatorControllerParameter parameter in AnimatorNodes.parameters)
+            return State.Success;
+        }
+
+        if (Enemy.Damaged && !KnockedUp)
+        {
+
+            Core.Movement.SetVelocityX(0);
+
+            foreach (AnimatorControllerParameter parameter in AnimatorNodes.parameters)
+            {
+                if (parameter.name == "Hurt")
                 {
-                    if (parameter.name == "Hurt")
-                    {
-                        AnimatorNodes.SetBool(parameter.name, true);
-                    }
-                    else
-                    {
-                        AnimatorNodes.SetBool(parameter.name, false);
-                    }
+                    AnimatorNodes.SetBool(parameter.name, true);
+                }
+                else
+                {
+                    AnimatorNodes.SetBool(parameter.name, false);
                 }
             }
 

@@ -20,7 +20,7 @@ public class BaseBoss : BaseEnemy
         EnemyTree.Bind(Core, this, Anim);                            //Gets access to the data script
         EnemyTree = EnemyTree.Clone();                               //Duplicates behavior tree if another script has the exact same MovementTree
     }
-
+        
     protected override void Start()
     {
         base.Start();

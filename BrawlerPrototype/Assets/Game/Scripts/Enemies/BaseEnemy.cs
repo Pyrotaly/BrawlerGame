@@ -39,7 +39,6 @@ public class BaseEnemy : MonoBehaviour
     protected virtual void Start()
     {
         Core.Combat.CoreHealth = BaseData.MaxHealth;
-        Core.Movement.canKnockUp = true;
     }
 
     public virtual void Update()
@@ -52,31 +51,8 @@ public class BaseEnemy : MonoBehaviour
         #region DamageManagement
         if (Core.Combat.Damaged == true) //Struck by a non-knockup attack
         {
-
-            if (Core.Combat.CoreDamageType != 2)
-            {
-                Damaged = true;
-                DamagedType = Core.Combat.CoreDamageType;
-            }
-            else                //Struck by knockup
-            {
-                Damaged = true;
-                Core.Movement.canKnockUp = false;
-                timeStamp += Time.deltaTime;
-
-                if (timeStamp >= BaseData.KnockUpVulnerabilityTime)
-                {
-                    Core.Movement.SetVelocityY(BaseData.FallVelocity);
-                }
-
-                if (Core.CollisionSenses.Ground)
-                {
-                    timeStamp = 0;
-                    Damaged = false;
-                    Core.Movement.canKnockUp = true;
-                }
-            }
-
+            Damaged = true;
+            DamagedType = Core.Combat.CoreDamageType;
         }
         else
         {

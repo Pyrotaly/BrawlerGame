@@ -16,7 +16,7 @@ namespace TheKiwiCoder {
         [HideInInspector] public Vector2 position;
         [HideInInspector] public Core Core;
         [HideInInspector] public Blackboard blackboard;
-        [HideInInspector] public BaseEnemy Enemy;
+        [HideInInspector] public BaseBoss Enemy;
         [HideInInspector] public Animator AnimatorNodes;
         [HideInInspector] public int TestInt;
 

@@ -5,11 +5,11 @@ using UnityEngine;
 public class Enemy0 : BaseEnemy
 {
     private int direction; 
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
     }
-    public override void Start()
+    protected override void Start()
     {
         base.Start();
     }

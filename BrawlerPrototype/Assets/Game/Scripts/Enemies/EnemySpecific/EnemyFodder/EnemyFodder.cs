@@ -18,25 +18,25 @@ public class EnemyFodder : BaseEnemy
             direction = -1;
         }
 
-        Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(meleeAttackPosition.position, EnemyLightAttackData.LightAttackDetails[0].DamageRadius, BaseData.WhatIsPlayer);
+        //Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(meleeAttackPosition.position, EnemyLightAttackData.LightAttackDetails[0].DamageRadius, BaseData.WhatIsPlayer);
 
-        foreach (Collider2D collider in detectedObjects)
-        {
-            IDamageable damageable = collider.GetComponent<IDamageable>();
+        //foreach (Collider2D collider in detectedObjects)
+        //{
+        //    IDamageable damageable = collider.GetComponent<IDamageable>();
 
-            if (damageable != null)
-            {
-                damageable.Damage(EnemyLightAttackData.LightAttackDetails[0].DamageAmount, EnemyLightAttackData.LightAttackDetails[0].BasicDamageType);
-            }
+        //    if (damageable != null)
+        //    {
+        //        damageable.Damage(EnemyLightAttackData.LightAttackDetails[0].DamageAmount, EnemyLightAttackData.LightAttackDetails[0].BasicDamageType);
+        //    }
 
-            IKnockable knockbackable = collider.GetComponent<IKnockable>();
+        //    IKnockable knockbackable = collider.GetComponent<IKnockable>();
 
-            if (knockbackable != null)
-            {
-                knockbackable.Knockback(EnemyLightAttackData.LightAttackDetails[0].knockbackStrength, EnemyLightAttackData.LightAttackDetails[0].knockbackAngle, direction);
-            }
-        }
+        //    if (knockbackable != null)
+        //    {
+        //        knockbackable.Knockback(EnemyLightAttackData.LightAttackDetails[0].knockbackStrength, EnemyLightAttackData.LightAttackDetails[0].knockbackAngle, direction);
+        //    }
+        //}
 
-        EnemyNextLightAttack[0] = Time.time + EnemyLightCooldowns[0];
+        //EnemyNextLightAttack[0] = Time.time + EnemyLightCooldowns[0];
     }
 }

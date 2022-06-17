@@ -13,10 +13,16 @@ public class HurtNode : ActionNode
 
     protected override State OnUpdate() {
 
-        AnimatorNodes.SetBool("Move", false);
-        AnimatorNodes.SetBool("Flee", false);
-
         AnimatorNodes.SetInteger("damageType", Core.Combat.CoreDamageType);
+
+        if (Core.Combat.CoreDamageType == 2)
+        {
+            return State.Success;
+        }
+        else if (Enemy.Core.CollisionSenses.Ground)
+        {
+            return State.Failure;
+        }
 
         if (Enemy.Damaged)
         {
@@ -28,20 +34,6 @@ public class HurtNode : ActionNode
                 foreach (AnimatorControllerParameter parameter in AnimatorNodes.parameters)
                 {
                     if (parameter.name == "Hurt")
-                    {
-                        AnimatorNodes.SetBool(parameter.name, true);
-                    }
-                    else
-                    {
-                        AnimatorNodes.SetBool(parameter.name, false);
-                    }
-                }
-            }
-            else
-            {
-                foreach (AnimatorControllerParameter parameter in AnimatorNodes.parameters)
-                {
-                    if (parameter.name == "KnockUp")
                     {
                         AnimatorNodes.SetBool(parameter.name, true);
                     }

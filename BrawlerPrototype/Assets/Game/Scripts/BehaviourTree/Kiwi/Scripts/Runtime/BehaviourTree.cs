@@ -59,7 +59,7 @@ namespace TheKiwiCoder {
             return tree;
         }
 
-        public void Bind(Core core, BaseEnemy enemy, Animator animatorNodes) {
+        public void Bind(Core core, BaseBoss enemy, Animator animatorNodes) {
             Traverse(rootNode, node => {
                 node.Core = core;
                 node.blackboard = blackboard;

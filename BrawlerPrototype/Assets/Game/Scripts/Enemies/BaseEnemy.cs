@@ -5,63 +5,41 @@ using TheKiwiCoder;
 
 public class BaseEnemy : MonoBehaviour
 {
-
-    [HideInInspector] private Transform target;                     //COULD BE AN ERROR OF NOT GETTING PLAYER IN FUTURE
+    [Header("Player Targeting")]
+    private readonly float positionUpdateFrequency = 0.1f;          //Checks player position every given interval instead of every update
+    [HideInInspector] protected Transform target;                     //COULD BE AN ERROR OF NOT GETTING PLAYER IN FUTURE
     [HideInInspector] public Vector3 PlayerPosition;
     [SerializeField] private Transform playerDistanceRayPosition;   //Where the ray that checks player is located on enemy
-    private readonly float positionUpdateFrequency = 0.1f;          //Checks player position every given interval instead of every update
 
+    [Header("Combat")]
+    public GameObject[] EnemyProjectiles;
+    public Transform[] EnemyRangeAttackStartingPosition;
+    [HideInInspector] public int DamagedType;                       //When enemy is damaged, this int determines what damage type the damage dealt was
+    [HideInInspector] public float EnemyHealth;
+
+    [Header("Data")]
     [SerializeField] public D_BaseEnemy BaseData;
-    [SerializeField] private BehaviourTree EnemyTree;
+    [SerializeField] public D_LightAttacks EnemyLightData;
 
     public Animator Anim { get; private set; }
     public Core Core { get; private set; }
     public bool Damaged { get; private set; }                       //Used in Core
 
     private float timeStamp;
-
     private float dirNum;                                           //It is used in Update
-    public int TestDirection;
-    public bool CanFlip;
+    [HideInInspector] public bool CanFlip;
 
-    [Header("Combat")]
-    [SerializeField] public Transform meleeAttackPosition;
-    [HideInInspector] public int DamagedType;                       //When enemy is damaged, this int determines what damage type the damage dealt was
-    [HideInInspector] public float EnemyHealth;
-    public GameObject[] EnemyProjectiles;
-    public Transform[] EnemyRangeAttackStartingPosition;
-    public bool Flying;                                             //Planning on flying enemies in the future
-
-    [Header("Data")]
-    public D_LightAttacks EnemyLightAttackData;
-
-    [HideInInspector] public float[] EnemyNextLightAttack = new float[10];
-    [HideInInspector] public float[] EnemyNextHeavyAttack = new float[10];
-
-    [HideInInspector] public float[] EnemyLightCooldowns = new float[10];           //Currently, array is set to 10 but might need to change in the future
-    [HideInInspector] public float[] EnemyChargedLightCooldowns = new float[10];    
-
-
-    public virtual void Awake()
+    protected virtual void Awake()
     {
         Core = GetComponentInChildren<Core>();
         Anim = GetComponent<Animator>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
-        EnemyTree.Bind(Core, this, Anim);                            //Gets access to the data script
-        EnemyTree = EnemyTree.Clone();                               //Duplicates behavior tree if another script has the exact same MovementTree
     }
 
-    public virtual void Start()
+    protected virtual void Start()
     {
         Core.Combat.CoreHealth = BaseData.MaxHealth;
         Core.Movement.canKnockUp = true;
-
-        for (int i = 0; i < EnemyLightAttackData.LightAttackDetails.Length; i++) //These should be the same length for all data types
-        {
-            EnemyLightCooldowns[i] = EnemyLightAttackData.LightAttackDetails[i].BasicCooldown;
-            EnemyChargedLightCooldowns[i] = EnemyLightAttackData.LightAttackDetails[i].ChargedCooldown;
-        }
     }
 
     public virtual void Update()
@@ -70,11 +48,6 @@ public class BaseEnemy : MonoBehaviour
         EnemyHealth = Core.Combat.CoreHealth;
 
         InvokeRepeating("CheckPositions", 0f, positionUpdateFrequency); //This is used in movement nodes
-
-        if (EnemyTree)
-        {
-            EnemyTree.Update();
-        }
 
         #region DamageManagement
         if (Core.Combat.Damaged == true) //Struck by a non-knockup attack
@@ -146,13 +119,11 @@ public class BaseEnemy : MonoBehaviour
         else if (dir < 0f && CanFlip)
         {
             Core.Movement.RB2D.transform.Rotate(0.0f, 180.0f, 0.0f);
-            TestDirection = 1;
             return -1f;
         }
         else
         {
             Core.Movement.RB2D.transform.Rotate(0.0f, 0.0f, 0.0f);
-            TestDirection = -1;
             return 0f;
         }
     }
@@ -213,11 +184,6 @@ public class BaseEnemy : MonoBehaviour
     }
     #endregion
 
-    //Checks where the player is, used in BehaviorTree movement nodes
-    public void CheckPositions()
-    {
-        PlayerPosition = new Vector3(target.position.x, transform.position.y, transform.position.z);
-    }
 
     public void Die()
     {
@@ -251,7 +217,8 @@ public class BaseEnemy : MonoBehaviour
             Gizmos.color = Color.red; //ground check
             Gizmos.DrawWireSphere(Core.CollisionSenses.GroundCheck.position, (BaseData.GroundCheckRadius)); //baseData.groundCheckRadius
 
-            Gizmos.DrawWireSphere(meleeAttackPosition.position, EnemyLightAttackData.LightAttackDetails[0].DamageRadius);
+            //Attack Radius
+            //Gizmos.DrawWireSphere(meleeAttackPosition.position, EnemyLightAttackData.LightAttackDetails[0].DamageRadius);
         }
     }
 }

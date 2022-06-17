@@ -9,7 +9,6 @@ public struct S_AttackDetails
     [Header("Basic")]
     public float DamageAmount;
     public float MovementSpeed;
-    public float ProjectileSpeed;
     public float BasicCooldown;
     public int BasicDamageType;
     public float DamageRadius;
@@ -20,8 +19,6 @@ public struct S_AttackDetails
     [Header("Charged")]
     public float TimeTillCharged;
     //public float ChargedDamageAmount;
-    //public float ChargedMovementSpeed;
-    //public float ChargedProjectileSpeed;
     public float ChargedCooldown;
     //public int ChargedDamageType;
 

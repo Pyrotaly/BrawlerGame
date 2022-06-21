@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 487858272072d9e4481bff4dc74ce76c, type: 3}
+  m_Name: D_EnemyFodder
+  m_EditorClassIdentifier: 
+  MaxHealth: 5000
+  WallCheckDistance: 0.2
+  LedgeCheckDistance: 0.4
+  GroundCheckRadius: 1.49
+  CheckPlayerInMeleeRange: 5
+  CheckPlayerInCloseRange: 27
+  CheckPlayerInMediumRange: 29
+  CheckPlayerInLongRange: 999
+  CheckTouchingBorderRange: 3
+  CloseRangeActionDistance: 1
+  WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  WhatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 512
+  WhatIsBorder:
+    serializedVersion: 2
+    m_Bits: 128
+  FallVelocity: -33.5
+  KnockUpVulnerabilityTime: 5.5
+  RunToMovementSpeed: 12
+  RunFromMovementSpeed: 10

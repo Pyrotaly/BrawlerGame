@@ -18,10 +18,6 @@ public class D_BaseEnemy : ScriptableObject
     public float CheckPlayerInMediumRange = 4f;
     public float CheckPlayerInLongRange = 4f;
     public float CheckTouchingBorderRange = 3f;
-
-    //public float stunResistance = 3f;
-    //public float stunRecoveryTime = 2f;
-
     public float CloseRangeActionDistance = 1f;
 
     [Header("LayerMask")]
@@ -31,8 +27,9 @@ public class D_BaseEnemy : ScriptableObject
 
     [Header("HurtState")]
     public float FallVelocity;
+    public float KnockUpVulnerabilityTime;
 
-    [Header("TestNodeValues")]
+    [Header("MoveSpeed")]
     public float RunToMovementSpeed;
     public float RunFromMovementSpeed;
 }

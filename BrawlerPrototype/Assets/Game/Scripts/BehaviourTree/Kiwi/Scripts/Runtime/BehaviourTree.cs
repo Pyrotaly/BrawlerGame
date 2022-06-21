@@ -21,10 +21,6 @@ namespace TheKiwiCoder {
             return treeState;
         }
 
-        //public void Abort()
-        //{
-        //    rootNode.Abort();
-        //}
 
         public static List<Node> GetChildren(Node parent) {
             List<Node> children = new List<Node>();
@@ -63,7 +59,7 @@ namespace TheKiwiCoder {
             return tree;
         }
 
-        public void Bind(Core core, BaseEnemy enemy, Animator animatorNodes) {
+        public void Bind(Core core, BaseBoss enemy, Animator animatorNodes) {
             Traverse(rootNode, node => {
                 node.Core = core;
                 node.blackboard = blackboard;

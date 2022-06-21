@@ -291,7 +291,6 @@ MonoBehaviour:
   TestInt: 0
   description: 
   drawGizmos: 0
-  AnimParameter: Die
 --- !u!114 &-2042664723887898455
 MonoBehaviour:
   m_ObjectHideFlags: 0

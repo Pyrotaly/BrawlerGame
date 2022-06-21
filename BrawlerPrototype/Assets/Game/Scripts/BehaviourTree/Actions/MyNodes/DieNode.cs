@@ -5,8 +5,9 @@ using TheKiwiCoder;
 
 public class DieNode : ActionNode
 {
-    public string AnimParameter;
+
     protected override void OnStart() {
+
     }
 
     protected override void OnStop() {
@@ -18,26 +19,27 @@ public class DieNode : ActionNode
 
         if (Enemy.EnemyHealth <= 0) 
         {
+            Enemy.CanFlip = false;
+
             foreach (AnimatorControllerParameter parameter in AnimatorNodes.parameters)
             {
-                if (parameter.name == AnimParameter)
+                if (parameter.name == "Die")
                 {
                     AnimatorNodes.SetBool(parameter.name, true);
-                    Debug.Log(AnimParameter);
+                    Debug.Log("Die");
                 }
                 else
                 {
                     AnimatorNodes.SetBool(parameter.name, false);
                 }
             }
-            FindObjectOfType<BasicGameManager>().EndGame();
-            FindObjectOfType<BasicGameManager>().PlayerWinsScreen();
-            //AnimatorNodes.SetBool(AnimParameter, true);
+            //FindObjectOfType<BasicGameManager>().EndGame();
+            //FindObjectOfType<BasicGameManager>().PlayerWinsScreen();
             return State.Success;
         }
         else
         {
-            AnimatorNodes.SetBool(AnimParameter, false);
+            AnimatorNodes.SetBool("Die", false);
             return State.Failure;
         }
 

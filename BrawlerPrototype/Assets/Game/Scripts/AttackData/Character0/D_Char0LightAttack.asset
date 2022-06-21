@@ -19,93 +19,85 @@ MonoBehaviour:
     ProjectileSpeed: 0
     BasicCooldown: 0.35
     BasicDamageType: 0
+    DamageRadius: 0
+    knockbackStrength: 0
+    knockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0.5
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 5
-    ChargedDamageType: 0
   - AttackName: DownLightAttack
     DamageAmount: 0
     MovementSpeed: 0
     ProjectileSpeed: 0
     BasicCooldown: 2
     BasicDamageType: 0
+    DamageRadius: 0
+    knockbackStrength: 0
+    knockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0.2
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
   - AttackName: UpLightAttack
     DamageAmount: 0
     MovementSpeed: 0
     ProjectileSpeed: 0
     BasicCooldown: 0.5
     BasicDamageType: 0
+    DamageRadius: 0
+    knockbackStrength: 0
+    knockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0.25
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
   - AttackName: DashLightAttack
     DamageAmount: 0
     MovementSpeed: 0
     ProjectileSpeed: 0
     BasicCooldown: 0
     BasicDamageType: 0
+    DamageRadius: 0
+    knockbackStrength: 0
+    knockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0.25
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
   - AttackName: AirLight
     DamageAmount: 0
     MovementSpeed: 0
     ProjectileSpeed: 0
-    BasicCooldown: 0.33
+    BasicCooldown: 0.35
     BasicDamageType: 0
+    DamageRadius: 0
+    knockbackStrength: 0
+    knockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0.25
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
   - AttackName: AirDownLight
     DamageAmount: 0
     MovementSpeed: 0
     ProjectileSpeed: 0
     BasicCooldown: 0.7
     BasicDamageType: 0
+    DamageRadius: 0
+    knockbackStrength: 0
+    knockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0.25
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
   - AttackName: AirUpLight
     DamageAmount: 0
     MovementSpeed: 0
     ProjectileSpeed: 0
     BasicCooldown: 0.5
     BasicDamageType: 0
+    DamageRadius: 0
+    knockbackStrength: 0
+    knockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0.25
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
   - AttackName: AirDashLight
     DamageAmount: 0
     MovementSpeed: 0
     ProjectileSpeed: 0
     BasicCooldown: 0
     BasicDamageType: 0
+    DamageRadius: 0
+    knockbackStrength: 0
+    knockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0.25
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0

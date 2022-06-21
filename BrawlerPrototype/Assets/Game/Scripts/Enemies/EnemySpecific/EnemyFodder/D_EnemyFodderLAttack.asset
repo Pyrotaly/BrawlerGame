@@ -17,8 +17,8 @@ MonoBehaviour:
     DamageAmount: 20
     MovementSpeed: 0
     BasicCooldown: 10
-    BasicDamageType: 0
-    DamageRadius: 6.67
+    BasicDamageType: 15
+    DamageRadius: 9.82
     knockbackStrength: 2
     knockbackAngle: {x: 2, y: 2}
     TimeTillCharged: 0

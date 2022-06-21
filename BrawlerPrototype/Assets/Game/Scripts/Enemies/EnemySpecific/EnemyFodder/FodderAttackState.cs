@@ -17,6 +17,27 @@ public class FodderAttackState : EnemyAttackState
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
+        Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attackPosition.position,
+            entity.EnemyLightData.LightAttackDetails[0].DamageRadius, entity.BaseData.WhatIsPlayer);
+
+        foreach (Collider2D collider in detectedObjects)
+        {
+            IDamageable damageable = collider.GetComponent<IDamageable>();
+
+            if (damageable != null)
+            {
+                damageable.Damage(entity.EnemyLightData.LightAttackDetails[0].DamageAmount,
+                    entity.EnemyLightData.LightAttackDetails[0].BasicDamageType);
+            }
+
+            IKnockable knockbackable = collider.GetComponent<IKnockable>();
+
+            if (knockbackable != null)
+            {
+                knockbackable.Knockback(entity.EnemyLightData.LightAttackDetails[0].knockbackStrength,
+                    entity.EnemyLightData.LightAttackDetails[0].knockbackAngle, core.Movement.FacingDirection);
+            }
+        }
     }
 
     public override void Enter()
@@ -46,27 +67,7 @@ public class FodderAttackState : EnemyAttackState
 
     public override void TriggerAttack()
     {
-        Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attackPosition.position, 
-            entity.EnemyLightData.LightAttackDetails[0].DamageRadius, entity.BaseData.WhatIsPlayer);
 
-        foreach (Collider2D collider in detectedObjects)
-        {
-            IDamageable damageable = collider.GetComponent<IDamageable>();
-
-            if (damageable != null)
-            {
-                damageable.Damage(entity.EnemyLightData.LightAttackDetails[0].DamageAmount,
-                    entity.EnemyLightData.LightAttackDetails[0].BasicDamageType);
-            }
-
-            IKnockable knockbackable = collider.GetComponent<IKnockable>();
-
-            if (knockbackable != null)
-            {
-                knockbackable.Knockback(entity.EnemyLightData.LightAttackDetails[0].knockbackStrength, 
-                    entity.EnemyLightData.LightAttackDetails[0].knockbackAngle, core.Movement.FacingDirection);
-            }
-        }
         base.TriggerAttack();
     }
 }

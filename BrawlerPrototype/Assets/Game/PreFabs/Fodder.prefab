@@ -309,9 +309,9 @@ GameObject:
   - component: {fileID: 4212230041817042272}
   - component: {fileID: 4212230041817042275}
   - component: {fileID: 4212230041817042273}
-  - component: {fileID: 4212230041817042286}
   - component: {fileID: 4212230041817042287}
-  - component: {fileID: 4212230041817042284}
+  - component: {fileID: 5288285119627329942}
+  - component: {fileID: 8699099522134465635}
   m_Layer: 10
   m_Name: Fodder
   m_TagString: Untagged
@@ -378,7 +378,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e4c3d54be7dbba6498c97c328ae8391e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4f13086b926e254a9c0c4561bcc2bc5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -399,7 +399,7 @@ Animator:
   m_GameObject: {fileID: 4212230041817042274}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 444c92ef3697ff947ba475696ae0ac4b, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -408,75 +408,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4212230041817042286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4212230041817042274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece36912c45bb5746aa925ae49d8d755, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerPosition: {x: 0, y: 0, z: 0}
-  playerDistanceRayPosition: {fileID: 4212230042210358237}
-  BaseData: {fileID: 11400000, guid: 4a4855fdb4bae1b46a0e4cb8ed5352a0, type: 2}
-  EnemyTree: {fileID: 11400000, guid: e8e0cfe599e14b549b6da3bc3a9ae805, type: 2}
-  TestDirection: 0
-  CanFlip: 0
-  meleeAttackPosition: {fileID: 4212230041216036028}
-  DamagedType: 0
-  EnemyHealth: 0
-  EnemyProjectiles: []
-  EnemyRangeAttackStartingPosition: []
-  Flying: 0
-  EnemyLightAttackData: {fileID: 11400000, guid: c79a721900f1b9e47908255ba84dcccb, type: 2}
-  EnemyNextLightAttack:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  EnemyNextHeavyAttack:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  EnemyLightCooldowns:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  EnemyChargedLightCooldowns:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
 --- !u!50 &4212230041817042287
 Rigidbody2D:
   serializedVersion: 4
@@ -498,7 +429,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4212230041817042284
+--- !u!114 &5288285119627329942
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -507,11 +438,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 4212230041817042274}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c7fc44a7d8977d46b866f47aa1dd19b, type: 3}
+  m_Script: {fileID: 11500000, guid: 48c654ec06991244d9e508a503f6f7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashMaterial: {fileID: 2100000, guid: 199e8024200786d45bfa6b71d9a50775, type: 2}
-  duration: 0.1
+--- !u!114 &8699099522134465635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4212230041817042274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229fe7cb0a247e849a3c7dd478a43c20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerPosition: {x: 0, y: 0, z: 0}
+  playerDistanceRayPosition: {fileID: 4212230042210358237}
+  EnemyProjectiles: []
+  EnemyRangeAttackStartingPosition: []
+  DamagedType: 0
+  EnemyHealth: 0
+  BaseData: {fileID: 11400000, guid: 200320e3913985e4a89aee45dbd0ef0b, type: 2}
+  EnemyLightData: {fileID: 11400000, guid: 22a9cd9a6a1ed124d956377e29bf21f0, type: 2}
+  CanFlip: 0
+  AttackPosition: {fileID: 0}
+  AttackCooldown: 0
+  NextAttackTime: 0
 --- !u!1 &4212230041867545669
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3c43e09717bff4f88333b1863c7503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canKnockUp: 0
 --- !u!1 &4212230042210358236
 GameObject:
   m_ObjectHideFlags: 0

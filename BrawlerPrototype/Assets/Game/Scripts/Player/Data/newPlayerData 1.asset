@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89e22e806f1e3bf439b20a6617e3ead9, type: 3}
-  m_Name: TestingData
+  m_Script: {fileID: 11500000, guid: fe3652e1a5f55a84aaf2506338e75729, type: 3}
+  m_Name: newPlayerData 1
   m_EditorClassIdentifier: 
+  MaxHealth: 100
   MovementVelocity: 10
   AirVelocity: 0
   JumpVelocity: 29
   AmountOfJumps: 1
   JumpTime: 3
   FallVelocity: 10
-  startOffset: {x: 0, y: 0}
-  stopOffset: {x: 0, y: 0}

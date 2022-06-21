@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirDownChargedAttackState : MonoBehaviour
+public class AirDownChargedAttackState : AirStates
 {
-    // Start is called before the first frame update
-    void Start()
+    public AirDownChargedAttackState(Player player, string animBoolName) : base(player, animBoolName)
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -37,6 +37,7 @@ public class EnemyHurtState : EnemyState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        Debug.Log("HURT State");
 
         timeStamp += Time.deltaTime;
 

@@ -54,6 +54,7 @@ public class BaseMook : BaseEnemy
 
         if (Damaged)  // && !UnStoppable     UnStoppable is when certain moves cannot transition to hurt state 
         {
+            Debug.Log("AGH");
             StateMachine.ChangeState(HurtState);
         }    
     }

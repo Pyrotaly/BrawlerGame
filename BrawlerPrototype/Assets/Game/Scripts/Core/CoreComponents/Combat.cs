@@ -31,7 +31,7 @@ public class Combat : CoreComponent, IDamageable, IKnockable
             }
         }
 
-        Debug.Log(core.transform.parent.name + "Damaged!");
+        //Debug.Log(core.transform.parent.name + "Damaged!");
         //Debug.Log(damageType);
         Damaged = true;
         CoreDamageType = damageType;

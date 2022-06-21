@@ -24,6 +24,10 @@ public class EnemyIdleState : EnemyState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        if (entity.CheckPlayerInMediumRange())
+        {
+            stateMachine.ChangeState(entity.FleeState);
+        }
     }
 
     public override void PhysicsUpdate()

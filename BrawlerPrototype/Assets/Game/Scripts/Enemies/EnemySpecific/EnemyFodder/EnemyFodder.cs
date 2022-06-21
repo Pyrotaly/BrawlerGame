@@ -48,9 +48,6 @@ public class EnemyFodder : BaseMook
                 StateMachine.ChangeState(AttackState);
             }
         }
-        else if (CheckPlayerInMediumRange())
-        {
-            StateMachine.ChangeState(FleeState);
-        }
+
     }
 }

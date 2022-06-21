@@ -31,7 +31,7 @@ public class LightAttackState : GroundStates
     {
         base.LogicUpdate();
 
-        player.Core.Movement.SetVelocityX(xInput * 10);
+        player.Core.Movement.SetVelocityX(xInput * 19);
 
         if (!player.Input.Attack)
         {

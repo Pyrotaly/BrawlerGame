@@ -16,7 +16,6 @@ public class EnemyHurtState : EnemyState
         base.AnimationFinishTrigger();
         stateMachine.ChangeState(entity.IdleState);
         core.Combat.Damaged = false;
-        Debug.Log("HAHA");
     }
 
     public override void AnimationTrigger()
@@ -48,6 +47,7 @@ public class EnemyHurtState : EnemyState
 
         if (entity.DamagedType == 2)
         {
+            Debug.Log("HAHAHAHA");
             if (core.CollisionSenses.Ground)
             {
                 // recover

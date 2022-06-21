@@ -52,6 +52,7 @@ public class BaseEnemy : MonoBehaviour
         {
             Damaged = true;
             DamagedType = Core.Combat.CoreDamageType;
+            Anim.SetInteger("damageType", DamagedType);
         }
         else
         {

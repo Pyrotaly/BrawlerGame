@@ -314,7 +314,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fodder
+  m_Name: Fodder 1
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Idle
@@ -387,7 +387,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: KnockUp
+    m_ConditionEvent: Hurt
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -519,6 +519,9 @@ AnimatorTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Hurt
     m_EventTreshold: 0
+  - m_ConditionMode: 7
+    m_ConditionEvent: damageType
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2886956658230745368}
   m_Solo: 0
@@ -534,8 +537,11 @@ AnimatorTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: KnockUp
+    m_ConditionEvent: Hurt
     m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: damageType
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1361787976191673140}
   m_Solo: 0

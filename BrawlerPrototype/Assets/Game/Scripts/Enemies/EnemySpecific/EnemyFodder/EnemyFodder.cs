@@ -42,11 +42,15 @@ public class EnemyFodder : BaseMook
         if (Time.time >= NextAttackTime && EnemyAttackTokenManagement.AttackTokens != 0)
         {
             StateMachine.ChangeState(MoveState);
-            
+
             if (CheckPlayerInMeleeRange())
             {
                 StateMachine.ChangeState(AttackState);
             }
+        }
+        else if (CheckPlayerInMediumRange())
+        {
+            StateMachine.ChangeState(FleeState);
         }
     }
 }

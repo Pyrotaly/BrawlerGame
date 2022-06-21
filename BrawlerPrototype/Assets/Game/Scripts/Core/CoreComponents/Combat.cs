@@ -57,5 +57,6 @@ public class Combat : CoreComponent, IDamageable, IKnockable
     private void DamageFalse()
     {
         Damaged = false;
+        Debug.Log("hey");
     }
 }

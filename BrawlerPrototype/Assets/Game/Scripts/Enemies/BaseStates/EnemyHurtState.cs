@@ -11,10 +11,11 @@ public class EnemyHurtState : EnemyState
         this.baseData = baseData;
     }
 
-    public override void AnimationFinishedTrigger()
+    public override void AnimationFinishTrigger()
     {
-        base.AnimationFinishedTrigger();
+        base.AnimationFinishTrigger();
         stateMachine.ChangeState(entity.IdleState);
+        core.Combat.Damaged = false;
         Debug.Log("HAHA");
     }
 

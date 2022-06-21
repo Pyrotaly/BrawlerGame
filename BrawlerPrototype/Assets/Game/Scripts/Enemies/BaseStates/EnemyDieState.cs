@@ -8,9 +8,9 @@ public class EnemyDieState : EnemyState
     {
     }
 
-    public override void AnimationFinishedTrigger()
+    public override void AnimationFinishTrigger()
     {
-        base.AnimationFinishedTrigger();
+        base.AnimationFinishTrigger();
         entity.Die();
     }
 

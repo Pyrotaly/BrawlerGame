@@ -16,6 +16,6 @@ public class EnemyAnimationEventTransfer : MonoBehaviour
 
     private void AnimationFinishTrigger()
     {
-        mook.StateMachine.CurrentState.AnimationFinishedTrigger();
+        mook.StateMachine.CurrentState.AnimationFinishTrigger();
     }
 }

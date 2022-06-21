@@ -554,6 +554,7 @@ GameObject:
   - component: {fileID: 111083126}
   - component: {fileID: 111083127}
   - component: {fileID: 111083128}
+  - component: {fileID: 111083129}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -630,6 +631,23 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 10
   m_MaximumOrthoSize: 17
+--- !u!114 &111083129
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111083125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &139516067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,7 +1271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.3529665, y: 4.1518865, z: -5.4210606}
+  m_LocalPosition: {x: 3.3529723, y: 4.1519523, z: -5.4210606}
   m_LocalScale: {x: 0.66638, y: 0.9079427, z: 0.66638}
   m_Children: []
   m_Father: {fileID: 187450309}
@@ -1715,7 +1733,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7791667, y: 1}
+    m_SensorSize: {x: 1.7797357, y: 1}
   m_Transitions:
     m_BlendHint: 1
     m_InheritPosition: 0

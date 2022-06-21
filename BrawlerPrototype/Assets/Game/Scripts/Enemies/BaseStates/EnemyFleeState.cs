@@ -11,9 +11,9 @@ public class EnemyFleeState : EnemyState
         this.stateData = stateData;
     }
 
-    public override void AnimationFinishedTrigger()
+    public override void AnimationFinishTrigger()
     {
-        base.AnimationFinishedTrigger();
+        base.AnimationFinishTrigger();
     }
 
     public override void AnimationTrigger()
@@ -45,6 +45,7 @@ public class EnemyFleeState : EnemyState
             core.Movement.SetVelocityX(stateData.RunFromMovementSpeed * -1);
         }
 
+        //If distance between player and enemy is far enough, idle
         if (!entity.CheckPlayerInMediumRange())
         {
             stateMachine.ChangeState(entity.IdleState);

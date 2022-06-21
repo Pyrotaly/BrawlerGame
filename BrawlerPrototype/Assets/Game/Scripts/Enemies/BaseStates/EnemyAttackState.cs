@@ -50,9 +50,9 @@ public class EnemyAttackState : EnemyState
         base.AnimationTrigger();
     }
 
-    public override void AnimationFinishedTrigger()
+    public override void AnimationFinishTrigger()
     {
-        base.AnimationFinishedTrigger();
+        base.AnimationFinishTrigger();
         //entity.NextAttackTime = Time.time + entity.AttackCooldown;  //Could have more specialized attacks in the future
         entity.NextAttackTime = Time.time + 6;
     }

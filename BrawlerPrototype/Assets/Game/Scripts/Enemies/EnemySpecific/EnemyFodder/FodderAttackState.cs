@@ -27,15 +27,15 @@ public class FodderAttackState : EnemyAttackState
             if (damageable != null)
             {
                 damageable.Damage(entity.EnemyLightData.LightAttackDetails[0].DamageAmount,
-                    entity.EnemyLightData.LightAttackDetails[0].BasicDamageType);
+                    entity.EnemyLightData.LightAttackDetails[0].DamageType);
             }
 
             IKnockable knockbackable = collider.GetComponent<IKnockable>();
 
             if (knockbackable != null)
             {
-                knockbackable.Knockback(entity.EnemyLightData.LightAttackDetails[0].knockbackStrength,
-                    entity.EnemyLightData.LightAttackDetails[0].knockbackAngle, core.Movement.FacingDirection);
+                knockbackable.Knockback(entity.EnemyLightData.LightAttackDetails[0].KnockbackStrength,
+                    entity.EnemyLightData.LightAttackDetails[0].KnockbackAngle, core.Movement.FacingDirection);
             }
         }
     }

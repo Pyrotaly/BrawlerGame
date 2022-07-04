@@ -31,7 +31,7 @@ public class AirLightAttackState : AirStates
         base.LogicUpdate();
 
         player.Core.Movement.SetVelocityX(xInput * 10);
-        player.Core.Movement.SetVelocityY(2.5f);
+        player.Core.Movement.SetVelocityY(1.5f);
 
         if (!player.Input.Attack)
         {

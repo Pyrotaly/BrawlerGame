@@ -53,7 +53,8 @@ public class Char0LightChargedAttackState : LightChargedAttackState
     public override void WeaponAnimationTrigger()
     {
         base.WeaponAnimationTrigger();
-        player.CheckMeleeAttack(190, 1, 3, new Vector2(3, 5));
+        player.CheckMeleeAttack(HeavyAttackData.HeavyAttackDetails[0].DamageAmount, HeavyAttackData.HeavyAttackDetails[0].DamageType,
+            HeavyAttackData.HeavyAttackDetails[0].KnockbackStrength, HeavyAttackData.HeavyAttackDetails[0].KnockbackAngle);
     }
 }
 

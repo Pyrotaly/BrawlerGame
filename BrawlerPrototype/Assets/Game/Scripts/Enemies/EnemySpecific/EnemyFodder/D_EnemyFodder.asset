@@ -15,7 +15,7 @@ MonoBehaviour:
   MaxHealth: 5000
   WallCheckDistance: 0.2
   LedgeCheckDistance: 0.4
-  GroundCheckRadius: 1.49
+  GroundCheckRadius: 0.68
   CheckPlayerInMeleeRange: 5
   CheckPlayerInCloseRange: 27
   CheckPlayerInMediumRange: 29

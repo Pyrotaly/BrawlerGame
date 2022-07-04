@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightChargedAttackState : GroundStates
 {
-    private D_HeavyAttacks HeavyAttackData;
+    protected D_HeavyAttacks HeavyAttackData;
     public LightChargedAttackState(Player player, string animBoolName, D_HeavyAttacks HeavyAttackData) : base(player, animBoolName)
     {
         this.HeavyAttackData = HeavyAttackData;

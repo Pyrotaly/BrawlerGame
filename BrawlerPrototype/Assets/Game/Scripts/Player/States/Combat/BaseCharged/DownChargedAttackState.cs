@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DownChargedAttackState : GroundStates
 {
-    private D_HeavyAttacks HeavyAttackData;
+    protected D_HeavyAttacks HeavyAttackData;
+
     public DownChargedAttackState(Player player, string animBoolName, D_HeavyAttacks HeavyAttackData) : base(player, animBoolName)
     {
         this.HeavyAttackData = HeavyAttackData;

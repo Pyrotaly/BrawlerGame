@@ -23,6 +23,7 @@ public class EnemyFodder : BaseMook
     {
         base.Awake();
         AttackState = new FodderAttackState(this, StateMachine, "Attack", AttackPosition);  //In future, make class more specific for enemies
+        FMOD_Test.PlaySound("event:/Okay");
     }
 
 

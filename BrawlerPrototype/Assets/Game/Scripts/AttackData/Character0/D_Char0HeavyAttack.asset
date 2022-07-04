@@ -13,123 +13,103 @@ MonoBehaviour:
   m_Name: D_Char0HeavyAttack
   m_EditorClassIdentifier: 
   HeavyAttackDetails:
+  - AttackName: HeavySlam
+    DamageAmount: 0
+    MovementSpeed: 0
+    BasicCooldown: 1
+    DamageType: 2
+    DamageRadius: 0
+    KnockbackStrength: 0
+    KnockbackAngle: {x: 0, y: 5}
+    TimeTillCharged: 0
+    ChargedCooldown: 0
   - AttackName: 
     DamageAmount: 0
     MovementSpeed: 0
-    ProjectileSpeed: 0
     BasicCooldown: 0
-    BasicDamageType: 0
+    DamageType: 0
+    DamageRadius: 0
+    KnockbackStrength: 0
+    KnockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
   - AttackName: 
     DamageAmount: 0
     MovementSpeed: 0
-    ProjectileSpeed: 0
     BasicCooldown: 0
-    BasicDamageType: 0
+    DamageType: 0
+    DamageRadius: 0
+    KnockbackStrength: 0
+    KnockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
   - AttackName: 
     DamageAmount: 0
     MovementSpeed: 0
-    ProjectileSpeed: 0
     BasicCooldown: 0
-    BasicDamageType: 0
+    DamageType: 0
+    DamageRadius: 0
+    KnockbackStrength: 0
+    KnockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
   - AttackName: 
     DamageAmount: 0
     MovementSpeed: 0
-    ProjectileSpeed: 0
     BasicCooldown: 0
-    BasicDamageType: 0
+    DamageType: 0
+    DamageRadius: 0
+    KnockbackStrength: 0
+    KnockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
   - AttackName: 
     DamageAmount: 0
     MovementSpeed: 0
-    ProjectileSpeed: 0
     BasicCooldown: 0
-    BasicDamageType: 0
+    DamageType: 0
+    DamageRadius: 0
+    KnockbackStrength: 0
+    KnockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
   - AttackName: 
     DamageAmount: 0
     MovementSpeed: 0
-    ProjectileSpeed: 0
     BasicCooldown: 0
-    BasicDamageType: 0
+    DamageType: 0
+    DamageRadius: 0
+    KnockbackStrength: 0
+    KnockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
   - AttackName: 
     DamageAmount: 0
     MovementSpeed: 0
-    ProjectileSpeed: 0
     BasicCooldown: 0
-    BasicDamageType: 0
+    DamageType: 0
+    DamageRadius: 0
+    KnockbackStrength: 0
+    KnockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
   - AttackName: 
     DamageAmount: 0
     MovementSpeed: 0
-    ProjectileSpeed: 0
     BasicCooldown: 0
-    BasicDamageType: 0
+    DamageType: 0
+    DamageRadius: 0
+    KnockbackStrength: 0
+    KnockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
   - AttackName: 
     DamageAmount: 0
     MovementSpeed: 0
-    ProjectileSpeed: 0
     BasicCooldown: 0
-    BasicDamageType: 0
+    DamageType: 0
+    DamageRadius: 0
+    KnockbackStrength: 0
+    KnockbackAngle: {x: 0, y: 0}
     TimeTillCharged: 0
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
     ChargedCooldown: 0
-    ChargedDamageType: 0
-  - AttackName: 
-    DamageAmount: 0
-    MovementSpeed: 0
-    ProjectileSpeed: 0
-    BasicCooldown: 0
-    BasicDamageType: 0
-    TimeTillCharged: 0
-    ChargedDamageAmount: 0
-    ChargedMovementSpeed: 0
-    ChargedProjectileSpeed: 0
-    ChargedCooldown: 0
-    ChargedDamageType: 0

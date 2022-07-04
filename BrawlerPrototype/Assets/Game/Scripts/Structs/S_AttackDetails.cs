@@ -10,11 +10,11 @@ public struct S_AttackDetails
     public float DamageAmount;
     public float MovementSpeed;
     public float BasicCooldown;
-    public int BasicDamageType;
+    public int DamageType;
     public float DamageRadius;
 
-    public float knockbackStrength;
-    public Vector2 knockbackAngle;
+    public float KnockbackStrength;
+    public Vector2 KnockbackAngle;
 
     [Header("Charged")]
     public float TimeTillCharged;
